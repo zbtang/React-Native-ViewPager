@@ -1,0 +1,36 @@
+{
+  "name": "rn-viewpager",
+  "version": "1.0.0",
+  "description": "ViewPager component for react-native, same api on both android and ios.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbtang/React-Native-ViewPager.git"
+  },
+  "keywords": [
+    "react-native-component",
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "viewpager",
+    "pager",
+    "pageview",
+    "page",
+    "tab-navigator",
+    "scrollable",
+    "tab",
+    "navigator",
+    "tab-bar",
+    "tab-view"
+  ],
+  "author": "ZubinTang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zbtang/React-Native-ViewPager/issues"
+  },
+  "homepage": "https://github.com/zbtang/React-Native-ViewPager#readme"
+}
