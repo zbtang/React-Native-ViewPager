@@ -5,7 +5,6 @@
 'use strict';
 
 import React, {Component, StyleSheet, View, ViewPagerAndroid, ScrollView, Platform} from 'react-native';
-import ReactElement from 'ReactElement';
 
 const SCROLLVIEW_REF = 'scrollView';
 const VIEWPAGER_REF = 'viewPager';
@@ -108,7 +107,7 @@ export default class ViewPager extends Component {
                 (child.type.displayName !== 'View')) {
                 console.warn('Each ViewPager child must be a <View>. Was ' + child.type.displayName);
             }
-            return ReactElement.createElement(child.type, newProps);
+            return React.createElement(child.type, newProps);
         });
     }
 
