@@ -1,4 +1,17 @@
 # React-Native-ViewPager
+ViewPager and Indicator component for react-native on both android and ios. ViewPager's props is the same as [ViewPagerAndroid](https://facebook.github.io/react-native/docs/viewpagerandroid.html#content). 
+
+## Preview
+![preview](./imgs/preview.png)
+
+## Build and run the demo
+
+```  
+cd demo/
+npm install
+react-native run-android
+ 
+```
 
 ## Usage
 
@@ -73,3 +86,7 @@ export default class ViewPagerPage extends Component {
 ```
 
 ## TODO
+- implement TabIndicator
+
+## Known issue
+- onPageScrollStateChanged prop not support on iOS ):
