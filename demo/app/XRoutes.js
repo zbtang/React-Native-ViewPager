@@ -45,9 +45,3 @@ export function ViewPagerPage() {
         getSceneClass: () => require('./pages/ViewPagerPage').default,
     };
 }
-export function ListViewPage() {
-    return {
-        getTitle: () => 'ListViewTest',
-        getSceneClass: () => require('./pages/ListViewPage').default,
-    };
-}

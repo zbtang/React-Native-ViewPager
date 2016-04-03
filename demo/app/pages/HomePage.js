@@ -5,15 +5,14 @@
 'use strict';
 
 import React, {Component, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
-import {ViewPagerPage, ListViewPage} from '../XRoutes';
+import {ViewPagerPage} from '../XRoutes';
 
 export default class HomePage extends Component {
 
     render() {
         return (
             <View>
-                {this.renderItem('ViewPager 测试', () => this.props.navigator.push(ViewPagerPage()))}
-                {this.renderItem('ListView 测试', () => this.props.navigator.push(ListViewPage()))}
+                {this.renderItem('DotIndicator & TitleIndicator Test', () => this.props.navigator.push(ViewPagerPage()))}
             </View>
         );
     }
