@@ -3,7 +3,7 @@ ViewPager and Indicator component for react-native on both android and ios. View
 
 ## Preview
 ![preview](./imgs/preview.png)
-
+<img src="./imgs/preview.png" width="300">
 ## Build and run the demo
 
 ```  
