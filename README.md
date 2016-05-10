@@ -2,8 +2,8 @@
 ViewPager and Indicator component for react-native on both android and ios. ViewPager's props is the same as [ViewPagerAndroid](https://facebook.github.io/react-native/docs/viewpagerandroid.html#content). 
 
 ## Preview
-![preview](./imgs/preview.png)
 <img src="./imgs/preview.png" width="300">
+
 ## Build and run the demo
 
 ```  
