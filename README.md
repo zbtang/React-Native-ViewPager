@@ -8,8 +8,11 @@ ViewPager and Indicator component for react-native on both android and ios. View
 
 
 ## Preview
+
+<p>
 <img src="./imgs/preview.png" width="300">  
 <img src="./imgs/tabPreview.png" width="300">
+</p>
 
 ## Build and run the demo
 
