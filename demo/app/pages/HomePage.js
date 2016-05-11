@@ -5,7 +5,7 @@
 'use strict';
 
 import React, {Component, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
-import {ViewPagerPage} from '../XRoutes';
+import {ViewPagerPage, TabIndicatorTest} from '../XRoutes';
 
 export default class HomePage extends Component {
 
@@ -13,6 +13,7 @@ export default class HomePage extends Component {
         return (
             <View>
                 {this.renderItem('DotIndicator & TitleIndicator Test', () => this.props.navigator.push(ViewPagerPage()))}
+                {this.renderItem('TabIndicator Test', () => this.props.navigator.push(TabIndicatorTest()))}
             </View>
         );
     }

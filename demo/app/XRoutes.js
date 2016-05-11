@@ -45,3 +45,9 @@ export function ViewPagerPage() {
         getSceneClass: () => require('./pages/ViewPagerPage').default,
     };
 }
+export function TabIndicatorTest() {
+    return {
+        getTitle: () => 'TabIndicator Test',
+        getSceneClass: () => require('./pages/TabIndicatorTest').default,
+    };
+}

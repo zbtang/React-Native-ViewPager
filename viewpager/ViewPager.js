@@ -4,7 +4,8 @@
 
 'use strict';
 
-import React, {Component, StyleSheet, View, ViewPagerAndroid, ScrollView, Platform} from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, ViewPagerAndroid, ScrollView, Platform} from 'react-native';
 
 const SCROLLVIEW_REF = 'scrollView';
 const VIEWPAGER_REF = 'viewPager';
@@ -58,7 +59,7 @@ export default class ViewPager extends Component {
             showsVerticalScrollIndicator: false,
             children: this._childrenWithOverridenStyle(),
             contentOffset: {x: this.state.width * initialPage, y: 0},
-            decelerationRate: 'fast',
+            decelerationRate: 0.9,
 
             onScroll: !this.props.onPageScroll && !this.props.onPageSelected ? null : this._onScrollOnIOS.bind(this),
             scrollEventThrottle: !this.props.onPageScroll && !this.props.onPageSelected ? 0 : ( this.props.onPageScroll ? 8 : 1)
