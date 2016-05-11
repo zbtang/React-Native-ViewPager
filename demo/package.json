@@ -8,6 +8,6 @@
   "dependencies": {
     "react": "^0.14.8",
     "react-native": "^0.22.2",
-    "rn-viewpager": "^1.0.4"
+    "rn-viewpager": "^1.1.1"
   }
 }
