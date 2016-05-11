@@ -3,8 +3,8 @@
  */
 
 'use strict';
-
-import React, {Component, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {ViewPagerPage, TabIndicatorTest} from '../XRoutes';
 
 export default class HomePage extends Component {

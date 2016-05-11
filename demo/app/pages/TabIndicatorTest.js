@@ -4,7 +4,8 @@
 
 'use strict';
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+import {IndicatorViewPager, PagerTabIndicator} from 'rn-viewpager';
 
 export default class TabIndicatorTest extends Component {
     static propTypes = {
@@ -14,9 +15,45 @@ export default class TabIndicatorTest extends Component {
 
     render() {
         return (
-            <View>
+            <IndicatorViewPager
+                style={{flex:1}}
+                indicator={this._renderTabIndicator()}
+            >
+                <View style={{backgroundColor:'cadetblue'}}>
+                    <Text>Home Page</Text>
+                </View>
+                <View style={{backgroundColor:'cornflowerblue'}}>
+                    <Text>Message Page</Text>
+                </View>
+                <View style={{backgroundColor:'#1AA094'}}>
+                    <Text>Profile Page</Text>
+                </View>
+            </IndicatorViewPager>
+        );
+    }
 
-            </View>
+    _renderTabIndicator() {
+        let tabs = [
+            {
+                text: 'Home',
+                iconSource: require('../imgs/ic_tab_home_normal.png'),
+                selectedIconSource: require('../imgs/ic_tab_home_click.png')
+            },
+            {
+                text: 'Message',
+                iconSource: require('../imgs/ic_tab_task_normal.png'),
+                selectedIconSource: require('../imgs/ic_tab_task_click.png')
+            },
+            {
+                text: 'Profile',
+                iconSource: require('../imgs/ic_tab_my_normal.png'),
+                selectedIconSource: require('../imgs/ic_tab_my_click.png')
+            }
+        ];
+        return (
+            <PagerTabIndicator
+                tabs={tabs}
+            />
         );
     }
 }
