@@ -4,8 +4,8 @@
 
 'use strict';
 
-import React, {Component} from 'react';
-import {StyleSheet, View, PropTypes} from 'react-native';
+import React, {Component, PropTypes} from 'react';
+import {StyleSheet, View} from 'react-native';
 import ViewPager from './ViewPager';
 
 const VIEWPAGER_REF = 'viewPager';

@@ -3,8 +3,8 @@
  */
 
 'use strict';
-import React, {Component} from 'react';
-import {StyleSheet, View, PropTypes} from 'react-native';
+import React, {Component, PropTypes} from 'react';
+import {StyleSheet, View} from 'react-native';
 import IndicatorViewPager from '../IndicatorViewPager';
 
 const DEFAULT_DOT_RADIUS = 6;
