@@ -113,7 +113,12 @@ export default class ViewPager extends Component {
     }
 
     setPageWithoutAnimation(index) {
+        if (Platform.OS === 'ios')
         this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * index, animated: false});
+        else {
+            this.refs[VIEWPAGER_REF].setPageWithoutAnimation(index);
+            if (this.props.onPageSelected) this.props.onPageSelected({position: index});
+        }
     }
 
     setPage(index) {
