@@ -58,8 +58,12 @@ export default class IndicatorViewPager extends Component {
         });
     }
 
-    setPage(index) {
-        this.refs[VIEWPAGER_REF].setPage(index);
+    setPage(selectedPage) {
+        this.refs[VIEWPAGER_REF].setPage(selectedPage);
+    }
+
+    setPageWithoutAnimation(selectedPage) {
+        this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage);
     }
 }
 const styles = StyleSheet.create({

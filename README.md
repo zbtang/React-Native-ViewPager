@@ -135,6 +135,3 @@ export default class ViewPagerPage extends Component {
 
 }
 ```
-
-## Known issue
-- onPageScrollStateChanged prop not support on iOS ):

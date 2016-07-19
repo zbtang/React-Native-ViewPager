@@ -16,16 +16,16 @@ export default class TabIndicatorTest extends Component {
     render() {
         return (
             <IndicatorViewPager
-                style={{flex:1}}
+                style={{flex: 1}}
                 indicator={this._renderTabIndicator()}
             >
-                <View style={{backgroundColor:'cadetblue'}}>
+                <View style={{backgroundColor: 'cadetblue'}}>
                     <Text>Home Page</Text>
                 </View>
-                <View style={{backgroundColor:'cornflowerblue'}}>
+                <View style={{backgroundColor: 'cornflowerblue'}}>
                     <Text>Message Page</Text>
                 </View>
-                <View style={{backgroundColor:'#1AA094'}}>
+                <View style={{backgroundColor: '#1AA094'}}>
                     <Text>Profile Page</Text>
                 </View>
             </IndicatorViewPager>

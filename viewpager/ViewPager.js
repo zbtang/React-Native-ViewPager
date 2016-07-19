@@ -5,27 +5,44 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {StyleSheet, View, ViewPagerAndroid, ScrollView, Platform} from 'react-native';
+import {StyleSheet, View, ViewPagerAndroid, ScrollView, Platform, PanResponder} from 'react-native';
 
 const SCROLLVIEW_REF = 'scrollView';
 const VIEWPAGER_REF = 'viewPager';
 
+const SCROLL_STATE = {
+    idle: 'idle',
+    settling: 'settling',
+    dragging: 'dragging'
+};
 export default class ViewPager extends Component {
-    static propTypes = {
-        ...ViewPagerAndroid.propTypes
-    };
+    static propTypes = {...ViewPagerAndroid.propTypes};
+
     static defaultProps = {
         initialPage: 0,
         keyboardDismissMode: 'on-drag',
         onPageScroll: null,
         onPageSelected: null,
+        onPageScrollStateChanged: null,
         /**
          * iOS not support yet
          */
-        onPageScrollStateChanged: null,
+        pageMargin: 0
     };
 
     state = {width: 0, height: 0};
+
+    _scrollState = SCROLL_STATE.idle;
+
+    _panResponder = PanResponder.create({
+        onStartShouldSetPanResponder: () => true,
+        onMoveShouldSetPanResponder: () => true,
+        onPanResponderGrant: () => this._setScrollState(SCROLL_STATE.dragging),
+        onPanResponderMove: () => null,
+        onPanResponderRelease: () => this._setScrollState(SCROLL_STATE.settling),
+        onPanResponderTerminate: () => null,
+        onPanResponderTerminationRequest: (evt, gestureState) => true,
+    });
 
     render() {
         return Platform.OS === 'ios' ? this._renderOnIOS() : (
@@ -49,39 +66,43 @@ export default class ViewPager extends Component {
     _renderOnIOS() {
         let childrenCount = this.props.children ? this.props.children.length : 0;
         let initialPage = Math.min(Math.max(0, this.props.initialPage), childrenCount - 1);
+        let needMonitorScroll = !!this.props.onPageScroll || !!this.props.onPageSelected || !!this.props.onPageScrollStateChanged;
+        let needMonitorTouch = !!this.props.onPageScrollStateChanged;
         let props = {
             ...this.props,
             ref: SCROLLVIEW_REF,
             onLayout: this._onScrollViewLayout.bind(this),
             horizontal: true,
             pagingEnabled: true,
+            scrollsToTop: false,
             showsHorizontalScrollIndicator: false,
             showsVerticalScrollIndicator: false,
             children: this._childrenWithOverridenStyle(),
             contentOffset: {x: this.state.width * initialPage, y: 0},
             decelerationRate: 0.9,
-
-            onScroll: !this.props.onPageScroll && !this.props.onPageSelected ? null : this._onScrollOnIOS.bind(this),
-            scrollEventThrottle: !this.props.onPageScroll && !this.props.onPageSelected ? 0 : ( this.props.onPageScroll ? 8 : 1)
+            onScroll: needMonitorScroll ? this._onScrollOnIOS.bind(this) : null,
+            scrollEventThrottle: needMonitorScroll ? ( this.props.onPageScroll ? 8 : 1) : 0,
         };
-        if (this.props.style && !this.props.style.height) return (<ScrollView {...props}/>);
+        if (needMonitorTouch) props = Object.assign(props, this._panResponder.panHandlers);
+        if (this.props.style && !this.props.style.height)
+            return <ScrollView {...props}/>;
         else return (
             <View style={this.props.style}>
                 <ScrollView {...props} style={null}/>
             </View>
-        )
-
+        );
     }
 
     _onScrollOnIOS(e) {
-        if (!this.props.onPageScroll && !this.props.onPageSelected)return;
-
         let {x} = e.nativeEvent.contentOffset, offset, position = Math.floor(x / this.state.width);
         offset = x / this.state.width - position;
 
         if (this.props.onPageScroll) this.props.onPageScroll({offset, position});
 
-        if (this.props.onPageSelected && offset === 0) this.props.onPageSelected({position});
+        if (this.props.onPageSelected && offset === 0) {
+            this.props.onPageSelected({position});
+            this.props.onPageScrollStateChanged && this._setScrollState(SCROLL_STATE.idle);
+        }
     }
 
     _onScrollViewLayout(event) {
@@ -112,21 +133,27 @@ export default class ViewPager extends Component {
         });
     }
 
-    setPageWithoutAnimation(index) {
+    _setScrollState(scrollState) {
+        if (scrollState === this._scrollState) return;
+        this.props.onPageScrollStateChanged && this.props.onPageScrollStateChanged(scrollState);
+        this._scrollState = scrollState;
+    }
+
+    setPageWithoutAnimation(selectedPage) {
         if (Platform.OS === 'ios')
-        this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * index, animated: false});
+            this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * selectedPage, animated: false});
         else {
-            this.refs[VIEWPAGER_REF].setPageWithoutAnimation(index);
-            if (this.props.onPageSelected) this.props.onPageSelected({position: index});
+            this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage);
+            if (this.props.onPageSelected) this.props.onPageSelected({position: selectedPage});
         }
     }
 
-    setPage(index) {
+    setPage(selectedPage) {
         if (Platform.OS === 'ios')
-            this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * index});
+            this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * selectedPage});
         else {
-            this.refs[VIEWPAGER_REF].setPage(index);
-            if (this.props.onPageSelected) this.props.onPageSelected({position: index});
+            this.refs[VIEWPAGER_REF].setPage(selectedPage);
+            if (this.props.onPageSelected) this.props.onPageSelected({position: selectedPage});
         }
     }
 }
