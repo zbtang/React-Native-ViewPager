@@ -5,7 +5,9 @@
 'use strict';
 
 
-import React, {StyleSheet, Navigator, Platform, PropTypes, View, Text, Image, BackAndroid} from 'react-native';
+import {StyleSheet, Navigator, Platform, View, Text, Image, BackAndroid} from 'react-native';
+import {PropTypes} from 'react';
+import React from 'react';
 import XNavBarStyle from './XNavBarStyle';
 import XNavigatorStyles from './XNavigatorStyles';
 import XRouteRenderer from './XRouteRenderer';

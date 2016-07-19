@@ -2,7 +2,8 @@
  * Created by tangzhibin on 16/3/21.
  */
 'use strict';
-import React, {StyleSheet} from 'react-native';
+import React from 'react';
+import {StyleSheet} from 'react-native';
 import Colors from './Colors';
 import Layout from './Layout';
 import XNavBarStyle from './XNavBarStyle';

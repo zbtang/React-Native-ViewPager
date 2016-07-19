@@ -2,7 +2,8 @@
  * Created by tangzhibin on 16/3/21.
  */
 'use strict';
-import React, {StyleSheet, Image} from 'react-native';
+import React from 'react';
+import {StyleSheet, Image} from 'react-native';
 
 export class BackIcon extends React.Component {
     static propTypes = Image.propTypes;

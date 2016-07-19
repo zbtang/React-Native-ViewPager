@@ -7,7 +7,7 @@
 
 'use strict';
 
-import React, {StyleSheet, Text, View, Navigator} from 'react-native';
+import {StyleSheet, Text, View, Navigator} from 'react-native';
 
 export function ExamplePage() {
     return {

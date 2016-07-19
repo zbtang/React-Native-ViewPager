@@ -4,7 +4,8 @@
 
 'use strict';
 
-import React, {Component, StyleSheet, View, Text} from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
 import {IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
 
 
@@ -20,6 +21,7 @@ export default class ViewPagerPage extends Component {
                     style={{height: 200}}
                     indicator={this._renderDotIndicator()}
                     onPageScrollStateChanged={(param) => console.log(param)}
+                    pageMargin={10}
                 >
                     <View style={{backgroundColor: 'cadetblue'}}>
                         <Text>{'count' + this.state.count}</Text>

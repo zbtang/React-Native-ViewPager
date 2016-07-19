@@ -4,7 +4,7 @@
 
 'use strict';
 
-import React, {Component} from 'react-native';
+import React, {Component} from 'react';
 import XNavigator from './components/common/navigator/XNavigator';
 import {HomePage} from './XRoutes';
 

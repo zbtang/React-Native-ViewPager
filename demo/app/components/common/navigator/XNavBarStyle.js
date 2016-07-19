@@ -4,7 +4,8 @@
 
 'use strict';
 
-import React, {StyleSheet, View, Dimensions, Platform} from 'react-native';
+import React from 'react';
+import {StyleSheet, View, Dimensions, Platform} from 'react-native';
 
 let buildStyleInterpolator = require('buildStyleInterpolator');
 let merge = require('merge');
