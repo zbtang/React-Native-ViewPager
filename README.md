@@ -1,6 +1,10 @@
 # React-Native-ViewPager
 ViewPager and Indicator component for react-native on both android and ios. ViewPager's props is the same as [ViewPagerAndroid](https://facebook.github.io/react-native/docs/viewpagerandroid.html#content). 
 
+<p>
+    <img src="./imgs/ad.png" width="1024">
+</p>
+
 ## Features
 - unify \<ViewPagerAndroid\> and \<ScrollView pagingEnabled={true}\> to \<ViewPager\>, add offer same props as [ViewPagerAndroid](https://facebook.github.io/react-native/docs/viewpagerandroid.html#content). 
 - \<IndicatorViewPager\> component support render indicator
@@ -10,8 +14,8 @@ ViewPager and Indicator component for react-native on both android and ios. View
 ## Preview
 
 <p>
-<img src="./imgs/preview.png" width="300">  
-<img src="./imgs/tabPreview.png" width="300">
+    <img src="./imgs/preview.png" width="300">  
+    <img src="./imgs/tabPreview.png" width="300">
 </p>
 
 ## Build and run the demo
