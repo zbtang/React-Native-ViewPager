@@ -14,8 +14,15 @@ ViewPager and Indicator component for react-native on both android and ios. View
 ## Preview
 
 <p>
-    <img src="./imgs/preview.png" width="300">  
-    <img src="./imgs/tabPreview.png" width="300">
+    <video src="./imgs/dotIndicator.mov" width="300" autoplay="autoplay" loop="loop" >
+        your browser does not support the video tag
+    </video>
+    <video src="./imgs/titleIndicator.mov" width="300" autoplay="autoplay" loop="loop" >
+        your browser does not support the video tag
+    </video>
+    <video src="./imgs/tabIndicator.mov" width="300" autoplay="autoplay" loop="loop" >
+        your browser does not support the video tag
+    </video>
 </p>
 
 ## Build and run the demo

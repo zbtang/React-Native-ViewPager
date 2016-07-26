@@ -50,14 +50,16 @@ export default class PagerTitleIndicator extends Component {
                     style={[styles.titleContainer, itemStyle]}
                     activeOpacity={0.6}
                     key={index}
-                    onPress={()=>{!isSelected && pager.setPage(index)}}
+                    onPress={()=> {
+                        !isSelected && pager.setPage(index)
+                    }}
                 >
                     <Text
-                        style={isSelected ? [styles.titleTextSelected, selectedItemTextStyle]: [styles.titleText, itemTextStyle]}
+                        style={isSelected ? [styles.titleTextSelected, selectedItemTextStyle] : [styles.titleText, itemTextStyle]}
                     >
                         {title}
                     </Text>
-                    {isSelected ? <View style={[styles.selectedBorder, selectedBorderStyle]}/> : null}
+                    {isSelected && <View style={[styles.selectedBorder, selectedBorderStyle]}/> }
                 </TouchableOpacity>
             );
         });

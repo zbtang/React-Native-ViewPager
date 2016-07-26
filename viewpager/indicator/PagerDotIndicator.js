@@ -51,7 +51,7 @@ export default class PagerDotIndicator extends Component {
         return (
             <View
                 {...this.props}
-                style={[styles.container,this.props.style]}
+                style={[styles.container, this.props.style]}
             >
                 {dotsView}
             </View>

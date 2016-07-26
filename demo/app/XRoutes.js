@@ -39,15 +39,21 @@ export function HomePage() {
         getSceneClass: () => require('./pages/HomePage').default
     };
 }
-export function ViewPagerPage() {
+export function TabIndicatorPage() {
     return {
-        getTitle: () => 'PagerTest',
-        getSceneClass: () => require('./pages/ViewPagerPage').default,
+        getTitle: () => 'Tab Indicator',
+        getSceneClass: () => require('./pages/TabIndicatorPage').default
     };
 }
-export function TabIndicatorTest() {
+export function TitleIndicatorPage() {
     return {
-        getTitle: () => 'TabIndicator Test',
-        getSceneClass: () => require('./pages/TabIndicatorTest').default,
+        getTitle: () => 'Title Indicator',
+        getSceneClass: () => require('./pages/TitleIndicatorPage').default
+    };
+}
+export function DotIndicatorPage() {
+    return {
+        getTitle: () => 'Dot Indicator',
+        getSceneClass: () => require('./pages/DotIndicatorPage').default
     };
 }
