@@ -39,14 +39,8 @@ react-native run-ios
 import React, {Component, StyleSheet, View, Text} from 'react-native';
 import {IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
 
-
 export default class ViewPagerPage extends Component {
-    state = {
-        count: 0
-    };
-
     render() {
-        console.log('render:' + this.state.count);
         return (
             <View style={{flex:1}}>
                 <IndicatorViewPager
@@ -54,7 +48,7 @@ export default class ViewPagerPage extends Component {
                     indicator={this._renderDotIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>{'count' + this.state.count}</Text>
+                        <Text>page one</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
                         <Text>page two</Text>
@@ -69,7 +63,7 @@ export default class ViewPagerPage extends Component {
                     indicator={this._renderTitleIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>{'count' + this.state.count}</Text>
+                        <Text>page one</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
                         <Text>page two</Text>
@@ -84,7 +78,7 @@ export default class ViewPagerPage extends Component {
                     indicator={this._renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>{'count' + this.state.count}</Text>
+                        <Text>page one</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
                         <Text>page two</Text>
@@ -98,44 +92,28 @@ export default class ViewPagerPage extends Component {
     }
 
     _renderTitleIndicator() {
-        return (
-            <PagerTitleIndicator
-                titles={['one', 'two', 'three']}
-            />
-        );
+        return <PagerTitleIndicator titles={['one', 'two', 'three']} />;
     }
 
     _renderDotIndicator() {
-        return (
-            <PagerDotIndicator
-                pageCount={3}
-            />
-        );
+        return <PagerDotIndicator pageCount={3} />;
     }
     
     _renderTabIndicator() {
-        let tabs = [
-            {
+        let tabs = [{
                 text: 'Home',
                 iconSource: require('../imgs/ic_tab_home_normal.png'),
                 selectedIconSource: require('../imgs/ic_tab_home_click.png')
-            },
-            {
+            },{
                 text: 'Message',
                 iconSource: require('../imgs/ic_tab_task_normal.png'),
                 selectedIconSource: require('../imgs/ic_tab_task_click.png')
-            },
-            {
+            },{
                 text: 'Profile',
                 iconSource: require('../imgs/ic_tab_my_normal.png'),
                 selectedIconSource: require('../imgs/ic_tab_my_click.png')
-            }
-        ];
-        return (
-            <PagerTabIndicator
-                tabs={tabs}
-            />
-        );
+        }];
+        return <PagerTabIndicator tabs={tabs} />;
     }
 
 }
