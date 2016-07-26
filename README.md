@@ -1,4 +1,6 @@
 # React-Native-ViewPager
+[![npm](https://img.shields.io/npm/v/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/rn-viewpager) [![npm](https://img.shields.io/npm/dm/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/rn-viewpager) [![npm](https://img.shields.io/npm/dt/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/rn-viewpager)
+
 ViewPager and Indicator component for react-native on both android and ios. ViewPager's props is the same as [ViewPagerAndroid](https://facebook.github.io/react-native/docs/viewpagerandroid.html#content). 
 
 <p>
@@ -12,7 +14,6 @@ ViewPager and Indicator component for react-native on both android and ios. View
 
 
 ## Preview
-
 <p>
     <img src="./imgs/dotIndicator.gif" width="256" />
     <img src="./imgs/titleIndicator.gif" width="256" />
@@ -24,8 +25,7 @@ ViewPager and Indicator component for react-native on both android and ios. View
 ```  
 cd demo/
 npm install
-react-native run-android
- 
+react-native run-ios
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ react-native run-android
 
 ### Integrate into your app:  
 
-```  
+```jsx  
 import React, {Component, StyleSheet, View, Text} from 'react-native';
 import {IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
 
