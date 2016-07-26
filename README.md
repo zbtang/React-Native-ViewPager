@@ -14,9 +14,9 @@ ViewPager and Indicator component for react-native on both android and ios. View
 ## Preview
 
 <p>
-    <img src="./imgs/dotIndicator.gif" width="300" />
-    <img src="./imgs/titleIndicator.gif" width="300" />
-    <img src="./imgs/tabIndicator.gif" width="300" />
+    <img src="./imgs/dotIndicator.gif" width="256" />
+    <img src="./imgs/titleIndicator.gif" width="256" />
+    <img src="./imgs/tabIndicator.gif" width="256" />
 </p>
 
 ## Build and run the demo
