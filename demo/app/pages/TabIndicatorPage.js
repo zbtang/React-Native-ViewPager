@@ -90,12 +90,14 @@ const styles = StyleSheet.create({
     tabIcon: {
         width: 20,
         height: 20,
-        tintColor: '#7F8C8D'
+        tintColor: '#7F8C8D',
+        resizeMode: 'contain'
     },
     selectedTabIcon: {
         width: 20,
         height: 20,
-        tintColor: '#2C3E50'
+        tintColor: '#2C3E50',
+        resizeMode: 'contain'
     },
     tabTxt: {
         color: '#34495E',
