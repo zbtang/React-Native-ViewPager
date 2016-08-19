@@ -119,3 +119,7 @@ export default class ViewPagerPage extends Component {
 
 }
 ```
+
+## Note
+
+When use this lib in ListView header on android platform, please add `removeClippedSubviews={false}` prop to your ListView.
