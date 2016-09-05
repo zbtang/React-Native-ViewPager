@@ -37,7 +37,8 @@ react-native run-ios
 ### Integrate into your app:  
 
 ```jsx  
-import React, {Component, StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+import React, {Component} from 'react';
 import {IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
 
 export default class ViewPagerPage extends Component {
