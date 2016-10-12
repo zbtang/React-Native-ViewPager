@@ -5,4 +5,3 @@ packName=`npm pack`
 cd ./demo
 npm install ../$packName
 cd ../
-
