@@ -17,7 +17,8 @@ export default class PagerTitleIndicator extends Component {
         itemStyle: View.propTypes.style,
         itemTextStyle: Text.propTypes.style,
         selectedItemTextStyle: Text.propTypes.style,
-        selectedBorderStyle: View.propTypes.style
+        selectedBorderStyle: View.propTypes.style,
+        renderTitle: React.PropTypes.func,
     };
 
     static defaultProps = {
@@ -45,21 +46,22 @@ export default class PagerTitleIndicator extends Component {
 
         let titleViews = titles.map((title, index)=> {
             let isSelected = this.state.selectedIndex === index;
+
+            const titleView = this.props.renderTitle ? this.props.renderTitle(index, title, isSelected) : (
+                <Text style={isSelected ? [styles.titleTextSelected, selectedItemTextStyle]: [styles.titleText, itemTextStyle]}>
+                    {title}
+                </Text>
+            );
+
             return (
                 <TouchableOpacity
                     style={[styles.titleContainer, itemStyle]}
                     activeOpacity={0.6}
                     key={index}
-                    onPress={()=> {
-                        !isSelected && pager.setPage(index)
-                    }}
+                    onPress={()=>{!isSelected && pager.setPage(index)}}
                 >
-                    <Text
-                        style={isSelected ? [styles.titleTextSelected, selectedItemTextStyle] : [styles.titleText, itemTextStyle]}
-                    >
-                        {title}
-                    </Text>
-                    {isSelected && <View style={[styles.selectedBorder, selectedBorderStyle]}/> }
+                    {titleView}
+                    {isSelected ? <View style={[styles.selectedBorder, selectedBorderStyle]}/> : null}
                 </TouchableOpacity>
             );
         });
