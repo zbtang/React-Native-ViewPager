@@ -62,7 +62,7 @@ export default class ViewPagerPage extends Component {
                 </IndicatorViewPager>
 
                 <IndicatorViewPager
-                    style={{flex:1,marginTop:10}}
+					style={{flex:1, paddingTop:20, backgroundColor:'white'}}
                     indicator={this._renderTitleIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
@@ -77,7 +77,7 @@ export default class ViewPagerPage extends Component {
                 </IndicatorViewPager>
                 
                 <IndicatorViewPager
-                    style={{flex:1,marginTop:10}}
+					style={{flex:1, paddingTop:20, backgroundColor:'white'}}
                     indicator={this._renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
