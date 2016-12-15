@@ -67,10 +67,6 @@ export default class TitleIndicatorPage extends Component {
 
 const styles = StyleSheet.create({
     indicatorContainer: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
         backgroundColor: 0x00000020,
         height: 48
     },
