@@ -33,7 +33,7 @@ export default class TitleIndicatorPage extends Component {
                     </View>
                 </View>
                 <IndicatorViewPager
-                    style={{flex: 1, paddingTop: 48}}
+                    style={{flex: 1, flexDirection: 'column-reverse'}}
                     indicator={this._renderTitleIndicator()}
                     onPageScroll={this._onPageScroll.bind(this)}
                 >
