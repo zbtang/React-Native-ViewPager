@@ -2,12 +2,12 @@
  * Created by tangzhibin on 16/3/28.
  */
 
-'use strict';
-import React, {Component, PropTypes} from 'react';
-import {StyleSheet, View} from 'react-native';
-import IndicatorViewPager from '../IndicatorViewPager';
+'use strict'
+import React, { Component, PropTypes } from 'react'
+import { StyleSheet, View } from 'react-native'
+import IndicatorViewPager from '../IndicatorViewPager'
 
-const DEFAULT_DOT_RADIUS = 6;
+const DEFAULT_DOT_RADIUS = 6
 export default class PagerDotIndicator extends Component {
     static propTypes = {
         ...View.propTypes,
@@ -16,50 +16,47 @@ export default class PagerDotIndicator extends Component {
         pager: PropTypes.instanceOf(IndicatorViewPager),
         dotStyle: View.propTypes.style,
         selectedDotStyle: View.propTypes.style
-    };
+    }
 
     static defaultProps = {
         pageCount: 0,
         initialPage: 0
-    };
+    }
 
     state = {
         selectedIndex: this.props.initialPage
-    };
+    }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate (nextProps, nextState) {
         return this.state.selectedIndex != nextState.selectedIndex ||
             this.props.pageCount != nextProps.pageCount ||
             this.props.dotStyle != nextProps.dotStyle ||
             this.props.selectedDotStyle != nextProps.selectedDotStyle ||
-            this.props.style != nextProps.style;
+            this.props.style != nextProps.style
     }
 
-    render() {
-        let {pageCount, dotStyle, selectedDotStyle}=this.props;
-        if (pageCount <= 0)return null;
-        let dotsView = [];
+    render () {
+        let {pageCount, dotStyle, selectedDotStyle} = this.props
+        if (pageCount <= 0)return null
+        let dotsView = []
         for (let i = 0; i < pageCount; i++) {
-            let isSelect = i === this.state.selectedIndex;
+            let isSelect = i === this.state.selectedIndex
             dotsView.push(
                 <View
                     style={[styles.dot, isSelect ? styles.selectDot : null, isSelect ? selectedDotStyle : dotStyle]}
                     key={i}
                 />
-            );
+            )
         }
         return (
-            <View
-                {...this.props}
-                style={[styles.container, this.props.style]}
-            >
+            <View {...this.props} style={[styles.container, this.props.style]} >
                 {dotsView}
             </View>
-        );
+        )
     }
 
-    onPageSelected(e) {
-        this.setState({selectedIndex: e.position});
+    onPageSelected (e) {
+        this.setState({selectedIndex: e.position})
     }
 }
 const styles = StyleSheet.create({
@@ -80,6 +77,6 @@ const styles = StyleSheet.create({
         margin: DEFAULT_DOT_RADIUS >> 1
     },
     selectDot: {
-        backgroundColor: 'white',
+        backgroundColor: 'white'
     }
-});
+})

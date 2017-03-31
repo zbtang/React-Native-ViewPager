@@ -2,10 +2,10 @@
  * Created by tangzhibin on 16/5/11.
  */
 
-'use strict';
-import React, {Component, PropTypes} from 'react';
-import {StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
-import IndicatorViewPager from '../IndicatorViewPager';
+'use strict'
+import React, { Component, PropTypes } from 'react'
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native'
+import IndicatorViewPager from '../IndicatorViewPager'
 
 export default class PagerTabIndicator extends Component {
     static propTypes = {
@@ -23,25 +23,25 @@ export default class PagerTabIndicator extends Component {
         selectedIconStyle: Image.propTypes.style,
         textStyle: Text.propTypes.style,
         selectedTextStyle: Text.propTypes.style
-    };
+    }
 
     static defaultProps = {
         tabs: []
-    };
+    }
 
     state = {
         selectedIndex: this.props.initialPage
-    };
+    }
 
-    render() {
+    render () {
         let {
             tabs, pager, style, itemStyle, selectedItemStyle, iconStyle,
             selectedIconStyle, textStyle, selectedTextStyle
-        } = this.props;
-        if (!tabs || tabs.length === 0) return null;
+        } = this.props
+        if (!tabs || tabs.length === 0) return null
 
         let tabsView = tabs.map((tab, index) => {
-            let isSelected = this.state.selectedIndex === index;
+            let isSelected = this.state.selectedIndex === index
             return (
                 <TouchableOpacity
                     style={[styles.itemContainer, isSelected ? selectedItemStyle : itemStyle]}
@@ -54,22 +54,22 @@ export default class PagerTabIndicator extends Component {
                         source={isSelected ? tab.selectedIconSource : tab.iconSource}
                     />
                     <Text
-                        style={[ isSelected ? styles.textSelected : styles.text, isSelected ? selectedTextStyle : textStyle]}
+                        style={[isSelected ? styles.textSelected : styles.text, isSelected ? selectedTextStyle : textStyle]}
                     >
                         {tab.text}
                     </Text>
                 </TouchableOpacity>
-            );
-        });
+            )
+        })
         return (
-            <View style={[styles.container, style]}>
+            <View style={[styles.container, style]} >
                 {tabsView}
             </View>
-        );
+        )
     }
 
-    onPageSelected(e) {
-        this.setState({selectedIndex: e.position});
+    onPageSelected (e) {
+        this.setState({selectedIndex: e.position})
     }
 }
 
@@ -97,4 +97,4 @@ const styles = StyleSheet.create({
         fontSize: 11,
         color: '#3584F6'
     }
-});
+})

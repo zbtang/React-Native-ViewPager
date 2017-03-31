@@ -24,10 +24,22 @@ ViewPager and Indicator component for react-native on both android and ios. View
 ## Build and run the demo
 
 ```  
-cd demo/
+cd RNViewPagerDemo/
 npm install
 react-native run-ios
 ```
+
+## Component API
+
+[`<ViewPager />` Component API](docs/mapview.md)
+
+[`<IndicatorViewPager />` Component API](docs/marker.md)
+
+[`<PagerDotIndicator />` Component API](docs/callout.md)
+
+[`<PagerTabIndicator />` Component API](docs/polygon.md)
+
+[`<PagerTitleIndicator />` Component API](docs/polyline.md)
 
 ## Usage
 

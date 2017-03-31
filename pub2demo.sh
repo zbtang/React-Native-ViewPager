@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm -rf ./demo/node_modules/rn-viewpager
+rm -rf ./RNViewPagerDemo/node_modules/rn-viewpager
 packName=`npm pack`
-cd ./demo
+cd ./RNViewPagerDemo
 npm install ../$packName
 cd ../
