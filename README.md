@@ -31,15 +31,15 @@ react-native run-ios
 
 ## Component API
 
-[`<ViewPager />` Component API](docs/mapview.md)
+[`<ViewPager />` Component API](docs/viewpager.md)
 
-[`<IndicatorViewPager />` Component API](docs/marker.md)
+[`<IndicatorViewPager />` Component API](docs/indicatorviewpager.md)
 
-[`<PagerDotIndicator />` Component API](docs/callout.md)
+[`<PagerDotIndicator />` Component API](docs/dotindicator.md)
 
-[`<PagerTabIndicator />` Component API](docs/polygon.md)
+[`<PagerTabIndicator />` Component API](docs/tabindicator.md)
 
-[`<PagerTitleIndicator />` Component API](docs/polyline.md)
+[`<PagerTitleIndicator />` Component API](docs/titleindicator.md)
 
 ## Usage
 
