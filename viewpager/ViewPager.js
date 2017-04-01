@@ -44,6 +44,7 @@ export default class ViewPager extends Component {
     constructor (props) {
         super(props)
         this._onPageScrollOnAndroid = this._onPageScrollOnAndroid.bind(this)
+        this._onPageSelectedOnAndroid = this._onPageSelectedOnAndroid.bind(this)
         this._renderOnIOS = this._renderOnIOS.bind(this)
         this._onScrollOnIOS = this._onScrollOnIOS.bind(this)
         this._onScrollViewLayout = this._onScrollViewLayout.bind(this)
