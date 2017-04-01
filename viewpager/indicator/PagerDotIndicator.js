@@ -15,12 +15,14 @@ export default class PagerDotIndicator extends Component {
         initialPage: PropTypes.number,
         pager: PropTypes.instanceOf(IndicatorViewPager),
         dotStyle: View.propTypes.style,
-        selectedDotStyle: View.propTypes.style
+        selectedDotStyle: View.propTypes.style,
+        hideSingle: React.PropTypes.bool
     }
 
     static defaultProps = {
         pageCount: 0,
-        initialPage: 0
+        initialPage: 0,
+        hideSingle: false
     }
 
     state = {
@@ -35,10 +37,11 @@ export default class PagerDotIndicator extends Component {
             this.props.style != nextProps.style
     }
 
-    render () {
-        let {pageCount, dotStyle, selectedDotStyle} = this.props
-        if (pageCount <= 0)return null
-        let dotsView = []
+    render() {
+        let {pageCount, dotStyle, selectedDotStyle}=this.props;
+        if (pageCount <= 0)return null;
+        if (this.props.hideSingle && pageCount == 1) return null;
+        let dotsView = [];
         for (let i = 0; i < pageCount; i++) {
             let isSelect = i === this.state.selectedIndex
             dotsView.push(
