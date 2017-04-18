@@ -163,6 +163,7 @@ export default class ViewPager extends Component {
     }
 
     setPage (selectedPage) {
+        console.log("au",selectedPage)
         if (Platform.OS === 'ios') this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * selectedPage})
         else {
             this.refs[VIEWPAGER_REF].setPage(selectedPage)
