@@ -11,3 +11,9 @@
 | scrollEnabled | bool | false |  |
 
 
+| Method | Params | Default | Note |
+| --- | --- | --- | --- |
+| setPage | selectedPageIndex |  |  |
+| setPageWithoutAnimation | selectedPageIndex |  |  |
+
+
