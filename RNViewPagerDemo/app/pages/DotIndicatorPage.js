@@ -31,6 +31,7 @@ export default class DotIndicatorPage extends Component {
                     indicator={this._renderIndicator()}
                     onPageScroll={this._onPageScroll.bind(this)}
                     autoPlayEnable
+                    onPageSelected={(p) => console.log(p)}
                 >
                     {SquarePagerView()}
                     {CirclePagerView()}

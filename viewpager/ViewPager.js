@@ -31,6 +31,8 @@ export default class ViewPager extends Component {
 
     _scrollState = SCROLL_STATE.idle
 
+    _preScrollX = null
+
     _panResponder = PanResponder.create({
         onStartShouldSetPanResponder: () => true,
         onMoveShouldSetPanResponder: () => true,
@@ -109,6 +111,8 @@ export default class ViewPager extends Component {
 
     _onScrollOnIOS (e) {
         let {x} = e.nativeEvent.contentOffset, offset, position = Math.floor(x / this.state.width)
+        if (x === this._preScrollX) return
+        this._preScrollX = x
         offset = x / this.state.width - position
 
         if (this.props.onPageScroll) this.props.onPageScroll({offset, position})

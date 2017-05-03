@@ -3196,9 +3196,9 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "http://registry.npm.taobao.org/rimraf/download/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
 
-rn-viewpager@^1.1.4:
-  version "1.1.4"
-  resolved "http://registry.npm.taobao.org/rn-viewpager/download/rn-viewpager-1.1.4.tgz#04ce247d3f594e54e5adeeb2ecd537866ba5ee85"
+rn-viewpager@^1.2.2:
+  version "1.2.2"
+  resolved "http://registry.npm.taobao.org/rn-viewpager/download/rn-viewpager-1.2.2.tgz#4d8226e6f080f189e0ff130b5167c4d1e147acfd"
 
 rndm@1.2.0:
   version "1.2.0"

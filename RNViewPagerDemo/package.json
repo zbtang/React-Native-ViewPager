@@ -9,7 +9,7 @@
 	"dependencies": {
 		"react": "~15.4.1",
 		"react-native": "0.42.3",
-		"rn-viewpager": "^1.1.4"
+		"rn-viewpager": "^1.2.2"
 	},
 	"devDependencies": {
 		"babel-jest": "19.0.0",
