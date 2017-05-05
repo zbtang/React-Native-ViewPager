@@ -16,14 +16,16 @@ export default class IndicatorViewPager extends Component {
         indicator: PropTypes.node,
         pagerStyle: View.propTypes.style,
         autoPlayEnable: PropTypes.bool,
-        autoPlayInterval: PropTypes.number
+        autoPlayInterval: PropTypes.number,
+        isLoop: PropTypes.bool,
     }
 
     static defaultProps = {
         indicator: null,
         initialPage: 0,
         autoPlayInterval: 3000,
-        autoPlayEnable: false
+        autoPlayEnable: false,
+        isLoop: false
     }
 
     constructor (props) {
