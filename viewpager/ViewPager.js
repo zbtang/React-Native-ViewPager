@@ -57,6 +57,7 @@ export default class ViewPager extends Component {
     }
 
     render () {
+        if (this.props.forceScrollView) { return this._renderOnIOS(); }
         return Platform.OS === 'ios' ? this._renderOnIOS() : (
             <ViewPagerAndroid
                 {...this.props}
