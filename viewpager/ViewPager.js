@@ -4,8 +4,8 @@
 
 'use strict'
 
+import { PanResponder, Platform, ScrollView, StyleSheet, View, ViewPagerAndroid } from 'react-native'
 import React, { Component } from 'react'
-import { StyleSheet, View, ViewPagerAndroid, ScrollView, Platform, PanResponder } from 'react-native'
 
 const SCROLLVIEW_REF = 'scrollView'
 const VIEWPAGER_REF = 'viewPager'
@@ -57,6 +57,8 @@ export default class ViewPager extends Component {
     }
 
     render () {
+        console.log('hohoho');
+        if (this.props.forceScrollView) { return this._renderOnIOS(); }
         return Platform.OS === 'ios' ? this._renderOnIOS() : (
             <ViewPagerAndroid
                 {...this.props}
