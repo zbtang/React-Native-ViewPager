@@ -4,8 +4,8 @@
 
 'use strict'
 
+import { PanResponder, Platform, ScrollView, StyleSheet, View, ViewPagerAndroid } from 'react-native'
 import React, { Component } from 'react'
-import { StyleSheet, View, ViewPagerAndroid, ScrollView, Platform, PanResponder } from 'react-native'
 
 const SCROLLVIEW_REF = 'scrollView'
 const VIEWPAGER_REF = 'viewPager'
@@ -57,7 +57,7 @@ export default class ViewPager extends Component {
     }
 
     render () {
-        return Platform.OS === 'ios' ? this._renderOnIOS() : (
+        return (this.props.forceScrollView || Platform.OS === 'ios') ? this._renderOnIOS() : (
             <ViewPagerAndroid
                 {...this.props}
                 ref={VIEWPAGER_REF}
@@ -158,7 +158,7 @@ export default class ViewPager extends Component {
     }
 
     setPageWithoutAnimation (selectedPage) {
-        if (Platform.OS === 'ios')
+        if (this.props.forceScrollView || Platform.OS === 'ios')
             this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * selectedPage, animated: false})
         else {
             this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage)
@@ -167,7 +167,7 @@ export default class ViewPager extends Component {
     }
 
     setPage (selectedPage) {
-        if (Platform.OS === 'ios') this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * selectedPage})
+        if (this.props.forceScrollView || Platform.OS === 'ios') this.refs[SCROLLVIEW_REF].scrollTo({x: this.state.width * selectedPage})
         else {
             this.refs[VIEWPAGER_REF].setPage(selectedPage)
             if (this.props.onPageSelected) this.props.onPageSelected({position: selectedPage})
