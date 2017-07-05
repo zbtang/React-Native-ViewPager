@@ -10,5 +10,6 @@
 | selectedIconStyle | Image.propTypes.style |  |  |
 | textStyle | Text.propTypes.style |  |  |
 | selectedTextStyle | Text.propTypes.style |  |  |
+| changePageWithAnimation | PropTypes.bool | true |  |
 
 

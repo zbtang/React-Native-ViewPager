@@ -22,11 +22,13 @@ export default class PagerTabIndicator extends Component {
         iconStyle: Image.propTypes.style,
         selectedIconStyle: Image.propTypes.style,
         textStyle: Text.propTypes.style,
-        selectedTextStyle: Text.propTypes.style
+        selectedTextStyle: Text.propTypes.style,
+        changePageWithAnimation: PropTypes.bool,
     }
 
     static defaultProps = {
-        tabs: []
+        tabs: [],
+        changePageWithAnimation: true
     }
 
     state = {
@@ -36,7 +38,7 @@ export default class PagerTabIndicator extends Component {
     render () {
         let {
             tabs, pager, style, itemStyle, selectedItemStyle, iconStyle,
-            selectedIconStyle, textStyle, selectedTextStyle
+            selectedIconStyle, textStyle, selectedTextStyle, changePageWithAnimation
         } = this.props
         if (!tabs || tabs.length === 0) return null
 
@@ -47,7 +49,13 @@ export default class PagerTabIndicator extends Component {
                     style={[styles.itemContainer, isSelected ? selectedItemStyle : itemStyle]}
                     activeOpacity={0.6}
                     key={index}
-                    onPress={() => {!isSelected && pager.setPage(index)}}
+                    onPress={() => {
+                        if (!isSelected){
+                            if (this.props.changePageWithAnimation)
+                                pager.setPageWithoutAnimation(index);
+                            else pager.setPage(index);
+                        }
+                    }}
                 >
                     <Image
                         style={[styles.image, isSelected ? selectedIconStyle : iconStyle]}

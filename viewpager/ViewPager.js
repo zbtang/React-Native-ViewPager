@@ -60,6 +60,7 @@ export default class ViewPager extends Component {
         return (this.props.forceScrollView || Platform.OS === 'ios') ? this._renderOnIOS() : (
             <ViewPagerAndroid
                 {...this.props}
+                scrollEnabled={this.props.horizontalScroll ? true : false}
                 ref={VIEWPAGER_REF}
                 onPageScroll={this._onPageScrollOnAndroid}
                 onPageSelected={this._onPageSelectedOnAndroid}
@@ -85,7 +86,7 @@ export default class ViewPager extends Component {
             ref: SCROLLVIEW_REF,
             onLayout: this._onScrollViewLayout,
             horizontal: true,
-            pagingEnabled: true,
+            pagingEnabled: this.props.horizontalScroll ? true : false,
             scrollsToTop: false,
             showsHorizontalScrollIndicator: false,
             showsVerticalScrollIndicator: false,
