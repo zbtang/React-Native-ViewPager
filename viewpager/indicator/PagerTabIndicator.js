@@ -52,8 +52,8 @@ export default class PagerTabIndicator extends Component {
                     onPress={() => {
                         if (!isSelected){
                             if (this.props.changePageWithAnimation)
-                                pager.setPageWithoutAnimation(index);
-                            else pager.setPage(index);
+                                pager.setPage(index);
+                            else pager.setPageWithoutAnimation(index);
                         }
                     }}
                 >
