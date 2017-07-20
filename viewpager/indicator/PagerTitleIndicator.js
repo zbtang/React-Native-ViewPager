@@ -19,7 +19,7 @@ export default class PagerTitleIndicator extends Component {
         itemTextStyle: Text.propTypes.style,
         selectedItemTextStyle: Text.propTypes.style,
         selectedBorderStyle: View.propTypes.style,
-        renderTitle: React.PropTypes.func
+        renderTitle: PropTypes.func
     }
 
     static defaultProps = {

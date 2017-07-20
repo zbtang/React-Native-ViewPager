@@ -17,7 +17,7 @@ export default class PagerDotIndicator extends Component {
         pager: PropTypes.instanceOf(IndicatorViewPager),
         dotStyle: View.propTypes.style,
         selectedDotStyle: View.propTypes.style,
-        hideSingle: React.PropTypes.bool
+        hideSingle: PropTypes.bool
     }
 
     static defaultProps = {
