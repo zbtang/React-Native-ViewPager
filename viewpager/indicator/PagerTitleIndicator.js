@@ -4,7 +4,8 @@
 
 'use strict'
 
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import IndicatorViewPager from '../IndicatorViewPager'
 
@@ -18,7 +19,7 @@ export default class PagerTitleIndicator extends Component {
         itemTextStyle: Text.propTypes.style,
         selectedItemTextStyle: Text.propTypes.style,
         selectedBorderStyle: View.propTypes.style,
-        renderTitle: React.PropTypes.func
+        renderTitle: PropTypes.func
     }
 
     static defaultProps = {

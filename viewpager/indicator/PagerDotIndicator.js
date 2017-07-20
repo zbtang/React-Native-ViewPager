@@ -3,7 +3,8 @@
  */
 
 'use strict'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { StyleSheet, View } from 'react-native'
 import IndicatorViewPager from '../IndicatorViewPager'
 
@@ -16,7 +17,7 @@ export default class PagerDotIndicator extends Component {
         pager: PropTypes.instanceOf(IndicatorViewPager),
         dotStyle: View.propTypes.style,
         selectedDotStyle: View.propTypes.style,
-        hideSingle: React.PropTypes.bool
+        hideSingle: PropTypes.bool
     }
 
     static defaultProps = {
