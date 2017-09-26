@@ -4,7 +4,8 @@
 
 'use strict'
 
-import { StyleSheet, Navigator, Platform, View, Text, Image, BackAndroid } from 'react-native'
+import { StyleSheet, Platform, View, Text, Image, BackAndroid } from 'react-native'
+import { Navigator } from 'react-native-deprecated-custom-components'
 import { PropTypes } from 'react'
 import React from 'react'
 import XNavBarStyle from './XNavBarStyle'
@@ -51,7 +52,7 @@ export default class XNavigator extends React.Component {
                 {...this.props}
                 ref={this._setNavigatorRef}
                 style={[XNavigatorStyles.navigator, this.props.style]}
-                sceneStyle={[XNavigatorStyles.scene, {paddingTop: sencePaddingTop}, this.props.sceneStyle]}
+                sceneStyle={StyleSheet.flatten([XNavigatorStyles.scene, {paddingTop: sencePaddingTop}, this.props.sceneStyle])}
                 navigationBar={this._renderNavigationBar()}
                 configureScene={route => this._routeRenderer.configureScene(route)}
                 renderScene={this._renderScene}

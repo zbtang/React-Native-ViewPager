@@ -7,9 +7,9 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View,
-    Navigator
+    View
 } from 'react-native'
+import { Navigator } from 'react-native-deprecated-custom-components'
 import XNavigatorStyles from './XNavigatorStyles'
 import { BackIcon } from './XNavigatorIcons'
 
@@ -28,8 +28,8 @@ class NavigationBarRouteMapper {
             <View style={XNavigatorStyles.barTitle} >
                 <Text style={[XNavigatorStyles.barTitleText, this._titleStyle]} allowFontScaling={false} >
                     {shortenTitle(route.getTitle(this._navigator, index, state))}
-                </Text>
-            </View>
+                </Text >
+            </View >
         )
     }
 
@@ -60,7 +60,7 @@ class NavigationBarRouteMapper {
                     allowFontScaling={false}
                 >
                     {title}
-                </Text>
+                </Text >
             )
         }
         return (
@@ -71,7 +71,7 @@ class NavigationBarRouteMapper {
             >
                 <BackIcon style={[XNavigatorStyles.barButtonIcon, this._barButtonIconStyle]} />
                 {buttonText}
-            </TouchableOpacity>
+            </TouchableOpacity >
         )
     }
 
@@ -93,7 +93,7 @@ class NavigationBarRouteMapper {
                     allowFontScaling={false}
                 >
                     {title}
-                </Text>
+                </Text >
             )
         if (imgSource)
             buttonImage = (
@@ -111,7 +111,7 @@ class NavigationBarRouteMapper {
             >
                 {buttonImage}
                 {buttonText}
-            </TouchableOpacity>
+            </TouchableOpacity >
         )
     }
 }
@@ -186,9 +186,9 @@ export default class ExRouteRenderer {
     }
 
     onBackPress () {
-        if (!this._navigator)return
+        if (!this._navigator) return
         let currentRoutes = this._navigator.getCurrentRoutes()
-        if (!currentRoutes && currentRoutes.length == 0)return
+        if (!currentRoutes && currentRoutes.length == 0) return
         let currentRoute = currentRoutes[currentRoutes.length - 1]
 
         if (currentRoute.onBackPress) return currentRoute.onBackPress(this._navigator)

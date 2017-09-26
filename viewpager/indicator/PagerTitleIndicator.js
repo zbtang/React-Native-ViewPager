@@ -16,6 +16,7 @@ export default class PagerTitleIndicator extends Component {
         pager: PropTypes.instanceOf(IndicatorViewPager),
         titles: PropTypes.arrayOf(PropTypes.string).isRequired,
         itemStyle: View.propTypes.style,
+        selectedItemStyle: View.propTypes.style,
         itemTextStyle: Text.propTypes.style,
         selectedItemTextStyle: Text.propTypes.style,
         selectedBorderStyle: View.propTypes.style,
@@ -42,7 +43,7 @@ export default class PagerTitleIndicator extends Component {
     }
 
     render () {
-        let {titles, pager, itemStyle, itemTextStyle, selectedItemTextStyle, selectedBorderStyle} = this.props
+        let {titles, pager, itemStyle, selectedItemStyle, itemTextStyle, selectedItemTextStyle, selectedBorderStyle} = this.props
         if (!titles || titles.length === 0)return null
 
         let titleViews = titles.map((title, index) => {
@@ -56,7 +57,7 @@ export default class PagerTitleIndicator extends Component {
 
             return (
                 <TouchableOpacity
-                    style={[styles.titleContainer, itemStyle]}
+                    style={[styles.titleContainer, isSelected ? selectedItemStyle : itemStyle]}
                     activeOpacity={0.6}
                     key={index}
                     onPress={() => {!isSelected && pager.setPage(index)}}

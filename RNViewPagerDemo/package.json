@@ -7,9 +7,10 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"react": "~15.4.1",
-		"react-native": "0.42.3",
-		"rn-viewpager": "^1.2.2"
+		"react": "16.0.0-alpha.12",
+		"react-native": "^0.48.4",
+		"react-native-deprecated-custom-components": "^0.1.1",
+		"rn-viewpager": "^1.2.4"
 	},
 	"devDependencies": {
 		"babel-jest": "19.0.0",
