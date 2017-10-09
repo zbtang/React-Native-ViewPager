@@ -5,18 +5,18 @@
 'use strict'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ViewPropTypes } from 'react-native'
 import IndicatorViewPager from '../IndicatorViewPager'
 
 const DEFAULT_DOT_RADIUS = 6
 export default class PagerDotIndicator extends Component {
     static propTypes = {
-        ...View.propTypes,
+        ...ViewPropTypes,
         pageCount: PropTypes.number.isRequired,
         initialPage: PropTypes.number,
         pager: PropTypes.instanceOf(IndicatorViewPager),
-        dotStyle: View.propTypes.style,
-        selectedDotStyle: View.propTypes.style,
+        dotStyle: ViewPropTypes.style,
+        selectedDotStyle: ViewPropTypes.style,
         hideSingle: PropTypes.bool
     }
 

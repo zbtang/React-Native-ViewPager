@@ -4,8 +4,8 @@
 | Prop | Type | Default | Note |
 | --- | --- | --- | --- |
 | pageCount | number |  |  |
-| dotStyle | View.propTypes.style |  |  |
-| selectedDotStyle | View.propTypes.style |  |  |
+| dotStyle | ViewPropTypes.style |  |  |
+| selectedDotStyle | ViewPropTypes.style |  |  |
 | hideSingle | bool |  |  |
 
 

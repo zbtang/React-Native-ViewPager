@@ -3,7 +3,7 @@
 | --- | --- | --- | --- |
 | ...ViewPager.propTypes |  |  |   |
 | indicator | PropTypes.node |  |  |
-| pagerStyle | View.propTypes.style |  |  |
+| pagerStyle | ViewPropTypes.style |  |  |
 | autoPlayEnable | bool | false |  |
 | autoPlayInterval | number | 3000  |  |
 | horizontalScroll | bool | true  |  |
