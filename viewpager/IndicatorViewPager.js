@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ViewPropTypes } from 'react-native'
 import ViewPager from './ViewPager'
 
 const VIEWPAGER_REF = 'viewPager'
@@ -15,7 +15,7 @@ export default class IndicatorViewPager extends Component {
     static propTypes = {
         ...ViewPager.propTypes,
         indicator: PropTypes.node,
-        pagerStyle: View.propTypes.style,
+        pagerStyle: ViewPropTypes.style,
         autoPlayEnable: PropTypes.bool,
         autoPlayInterval: PropTypes.number,
         horizontalScroll: PropTypes.bool

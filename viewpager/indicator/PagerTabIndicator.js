@@ -5,12 +5,12 @@
 'use strict'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Image, Text, TouchableOpacity, ViewPropTypes } from 'react-native'
 import IndicatorViewPager from '../IndicatorViewPager'
 
 export default class PagerTabIndicator extends Component {
     static propTypes = {
-        ...View.propTypes,
+        ...ViewPropTypes,
         initialPage: PropTypes.number,
         pager: PropTypes.instanceOf(IndicatorViewPager),
         tabs: PropTypes.arrayOf(PropTypes.shape({
@@ -18,8 +18,8 @@ export default class PagerTabIndicator extends Component {
             iconSource: Image.propTypes.source,
             selectedIconSource: Image.propTypes.source
         })).isRequired,
-        itemStyle: View.propTypes.style,
-        selectedItemStyle: View.propTypes.style,
+        itemStyle: ViewPropTypes.style,
+        selectedItemStyle: ViewPropTypes.style,
         iconStyle: Image.propTypes.style,
         selectedIconStyle: Image.propTypes.style,
         textStyle: Text.propTypes.style,
