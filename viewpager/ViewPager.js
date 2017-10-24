@@ -62,6 +62,7 @@ export default class ViewPager extends Component {
                 {...this.props}
                 scrollEnabled={this.props.horizontalScroll ? true : false}
                 ref={VIEWPAGER_REF}
+                key={this.props.children ? this.props.children.length : 0}
                 onPageScroll={this._onPageScrollOnAndroid}
                 onPageSelected={this._onPageSelectedOnAndroid}
             />
