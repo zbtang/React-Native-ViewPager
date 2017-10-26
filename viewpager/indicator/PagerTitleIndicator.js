@@ -6,20 +6,20 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, ViewPropTypes } from 'react-native'
 import IndicatorViewPager from '../IndicatorViewPager'
 
 export default class PagerTitleIndicator extends Component {
     static propTypes = {
-        ...View.propTypes,
+        ...ViewPropTypes,
         initialPage: PropTypes.number,
         pager: PropTypes.instanceOf(IndicatorViewPager),
         titles: PropTypes.arrayOf(PropTypes.string).isRequired,
-        itemStyle: View.propTypes.style,
-        selectedItemStyle: View.propTypes.style,
+        itemStyle: ViewPropTypes.style,
+        selectedItemStyle: ViewPropTypes.style,
         itemTextStyle: Text.propTypes.style,
         selectedItemTextStyle: Text.propTypes.style,
-        selectedBorderStyle: View.propTypes.style,
+        selectedBorderStyle: ViewPropTypes.style,
         renderTitle: PropTypes.func
     }
 

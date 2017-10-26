@@ -4,7 +4,7 @@
 
 'use strict'
 
-import { StyleSheet, Platform, View, Text, Image, BackAndroid } from 'react-native'
+import { StyleSheet, Platform, View, Text, Image, BackAndroid, ViewPropTypes } from 'react-native'
 import { Navigator } from 'react-native-deprecated-custom-components'
 import { PropTypes } from 'react'
 import React from 'react'
@@ -29,8 +29,8 @@ export default class XNavigator extends React.Component {
 
     static propTypes = {
         ...Navigator.props,
-        sceneStyle: View.propTypes.style,
-        navigationBarStyle: View.propTypes.style,
+        sceneStyle: ViewPropTypes.style,
+        navigationBarStyle: ViewPropTypes.style,
         titleStyle: Text.propTypes.style,
         barButtonTextStyle: Text.propTypes.style,
         barButtonIconStyle: Image.propTypes.style,
