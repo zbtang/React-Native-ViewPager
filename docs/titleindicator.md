@@ -4,10 +4,10 @@
 | Prop | Type | Default | Note |
 | --- | --- | --- | --- |
 | titles | String Array |  |  |
-| itemStyle | View.propTypes.style |  |  |
+| itemStyle | ViewPropTypes.style |  |  |
 | itemTextStyle | Text.propTypes.style |  |  |
 | selectedItemTextStyle | Text.propTypes.style |  |  |
-| selectedBorderStyle | View.propTypes.style |  |  |
+| selectedBorderStyle | ViewPropTypes.style |  |  |
 | renderTitle | function |  |  |
 
 
