@@ -164,10 +164,7 @@ export default class PagerTitleIndicator extends Component {
                 lastItemOffsetX = curItemOffsetX;
                 lastItemAbsPosition = curItemAbsPosition;
             }
-            if (this._contentHorOffset > lastItemOffsetX) {
-                const deltaX = lastItemOffsetX - DEFAULT_ITEM_MARGIN;
-                this.scroller.scrollTo({ x: deltaX });
-            } else if (this._currentMaxHor < curItemAbsPosition) {
+            if (this._contentHorOffset > lastItemOffsetX || this._currentMaxHor < curItemAbsPosition) {
                 const deltaX = lastItemOffsetX - DEFAULT_ITEM_MARGIN;
                 this.scroller.scrollTo({ x: deltaX });
             }
