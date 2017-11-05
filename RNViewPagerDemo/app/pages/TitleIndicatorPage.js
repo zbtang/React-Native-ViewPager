@@ -6,7 +6,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, Platform, Image, TouchableOpacity, Animated } from 'react-native'
 import { SquarePagerView, TrianglePagerView, CirclePagerView } from '../components/PagerItemView'
-import { IndicatorViewPager, PagerTitleIndicator } from 'rn-viewpager'
+import { IndicatorViewPager } from 'rn-viewpager'
+import PagerTitleIndicator from '../../viewpager/indicator/PagerTitleIndicator';
 
 export default class TitleIndicatorPage extends Component {
     state = {
@@ -16,8 +17,8 @@ export default class TitleIndicatorPage extends Component {
 
     render () {
         let bgColor = this.state.bgColor.interpolate({
-            inputRange: [0, 1, 2],
-            outputRange: ['hsl(187, 74%, 47%)', 'hsl(89, 47%, 54%)', 'hsl(12, 97%, 59%)']
+            inputRange: [0, 1, 2 , 3 , 4, 5 , 6 , 7, 8],
+            outputRange: ['hsl(187, 74%, 47%)', 'hsl(89, 47%, 54%)', 'hsl(12, 97%, 59%)','hsl(32, 97%, 59%)','hsl(72, 97%, 59%)','hsl(212, 97%, 59%)','hsl(332, 97%, 59%)','hsl(1, 97%, 59%)','hsl(200, 97%, 59%)']
         })
         return (
             <Animated.View style={{flex: 1, backgroundColor: bgColor}} >
@@ -38,6 +39,13 @@ export default class TitleIndicatorPage extends Component {
                     {SquarePagerView()}
                     {CirclePagerView()}
                     {TrianglePagerView()}
+                    {SquarePagerView()}
+                    {CirclePagerView()}
+                    {TrianglePagerView()}
+                    {SquarePagerView()}
+                    {CirclePagerView()}
+                    {TrianglePagerView()}
+
                 </IndicatorViewPager>
             </Animated.View>
         )
@@ -47,17 +55,18 @@ export default class TitleIndicatorPage extends Component {
         return (
             <PagerTitleIndicator
                 style={styles.indicatorContainer}
+                trackScroll={true}
                 itemTextStyle={styles.indicatorText}
                 selectedItemTextStyle={styles.indicatorSelectedText}
                 selectedBorderStyle={styles.selectedBorderStyle}
-                titles={['SQUARE', 'CIRCLE', 'TRIANGLE']}
+                titles={['SQUARE', 'CIRCLE', 'TRIANGLE','SQUARE', 'CIRCLE', 'TRIANGLE','SQUARE', 'CIRCLE', 'TRIANGLE']}
             />
         )
     }
 
     _onPageScroll (scrollData) {
         let {offset, position} = scrollData
-        if (position < 0 || position >= 2) return
+        if (position < 0 || position > 8) return
         this._setBgColor({bgColor: offset + position})
     }
 
