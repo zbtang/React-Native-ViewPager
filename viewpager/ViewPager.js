@@ -24,7 +24,8 @@ export default class ViewPager extends Component {
         onPageScroll: null,
         onPageSelected: null,
         onPageScrollStateChanged: null,
-        pageMargin: 0
+        pageMargin: 0,
+        horizontalScroll: true
     }
 
     state = {width: 0, height: 0}
@@ -103,7 +104,7 @@ export default class ViewPager extends Component {
             marginHorizontal: -this.props.pageMargin / 2
         }
         if (this.props.style && !this.props.style.height)
-            return <ScrollView {...props} style={[this.props.style, scrollViewStyle]} />
+            return <ScrollView {...props} style={[scrollViewStyle, this.props.style]} />
         else return (
             <View style={this.props.style} >
                 <ScrollView {...props} style={scrollViewStyle} />
