@@ -58,6 +58,9 @@ export default class PagerTitleIndicator extends Component {
             this.props.selectedItemTextStyle != nextProps.selectedItemTextStyle ||
             this.props.selectedBorderStyle != nextProps.selectedBorderStyle
     }
+    componentWillReceiveProps(nextProps){
+        this._titleCount = nextProps.titles.length;
+    }
 
     render () {
         let {titles, pager, itemStyle, selectedItemStyle, itemTextStyle, selectedItemTextStyle, selectedBorderStyle} = this.props
