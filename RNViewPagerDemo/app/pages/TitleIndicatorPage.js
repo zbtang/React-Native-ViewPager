@@ -4,11 +4,11 @@
 
 'use strict'
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Platform, Image, TouchableOpacity, Animated } from 'react-native'
+import { StyleSheet, View, Text, Platform, Image, TouchableOpacity, Animated,Dimensions } from 'react-native'
 import { SquarePagerView, TrianglePagerView, CirclePagerView } from '../components/PagerItemView'
-import { IndicatorViewPager } from 'rn-viewpager'
-import PagerTitleIndicator from '../../viewpager/indicator/PagerTitleIndicator';
+import { IndicatorViewPager,PagerTitleIndicator } from 'rn-viewpager'
 
+const windowWidth = Dimensions.get('window').width;
 export default class TitleIndicatorPage extends Component {
     state = {
         bgColor: new Animated.Value(0)
@@ -57,9 +57,11 @@ export default class TitleIndicatorPage extends Component {
                 style={styles.indicatorContainer}
                 trackScroll={true}
                 itemTextStyle={styles.indicatorText}
+                itemStyle={{width:windowWidth/4}}
+                selectedItemStyle={{width:windowWidth/4}}
                 selectedItemTextStyle={styles.indicatorSelectedText}
                 selectedBorderStyle={styles.selectedBorderStyle}
-                titles={['SQUARE', 'CIRCLE', 'TRIANGLE','SQUARE', 'CIRCLE', 'TRIANGLE','SQUARE', 'CIRCLE', 'TRIANGLE']}
+                titles={['SQUARE', 'CIRCLE','TRIANGLE','SQUARE', 'CIRCLE','TRIANGLE','SQUARE', 'CIRCLE','TRIANGLE']}
             />
         )
     }
