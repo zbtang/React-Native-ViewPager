@@ -70,10 +70,13 @@ export default class PagerTitleIndicator extends Component {
             let isSelected = this.state.selectedIndex === index
 
             const itemMargin = (itemStyle && itemStyle.marginLeft) || DEFAULT_ITEM_MARGIN;
-            const itemMarginObj =
-                index < this._titleCount - 1
-                ? { marginLeft: itemMargin }
-                : { marginLeft: itemMargin, marginRight: itemMargin };
+            let itemMarginObj = null;
+            if (!itemStyle && !selectedItemStyle) {
+                itemMarginObj =
+                    index < this._titleCount - 1
+                    ? { marginLeft: itemMargin }
+                    : { marginLeft: itemMargin, marginRight: itemMargin };
+            }
 
             const titleView = this.props.renderTitle ? this.props.renderTitle(index, title, isSelected) : (
                 <Text style={isSelected ? [styles.titleTextSelected, selectedItemTextStyle] : [styles.titleText, itemTextStyle]} >
@@ -123,6 +126,8 @@ export default class PagerTitleIndicator extends Component {
     }
 
     _visibleDetect(selectedIndex) {
+        if(selectedIndex > this._titleCount -1 ) return ;
+
         const curItemLayoutInfo = itemLayoutInfo[selectedIndex];
         const { width, x: curItemOffsetX } = curItemLayoutInfo.layout;
         const curItemAbsPosition = width + curItemOffsetX + DEFAULT_ITEM_MARGIN; // add on margin
