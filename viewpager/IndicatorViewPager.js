@@ -15,6 +15,7 @@ export default class IndicatorViewPager extends Component {
     static propTypes = {
         ...ViewPager.propTypes,
         indicator: PropTypes.node,
+	indicatorOnTop: PropTypes.bool,
         pagerStyle: ViewPropTypes.style,
         autoPlayEnable: PropTypes.bool,
         autoPlayInterval: PropTypes.number,
@@ -23,6 +24,7 @@ export default class IndicatorViewPager extends Component {
 
     static defaultProps = {
         indicator: null,
+	indicatorOnTop: false,
         initialPage: 0,
         autoPlayInterval: 3000,
         autoPlayEnable: false,
@@ -57,6 +59,9 @@ export default class IndicatorViewPager extends Component {
 
     render () {
         return (
+	    {this.props.indicatorOnTop &&
+	        this._renderIndicator()
+	    }
             <View style={[styles.container, this.props.style]} >
                 <ViewPager
                     {...this.props}
@@ -66,7 +71,9 @@ export default class IndicatorViewPager extends Component {
                     onPageScroll={this._onPageScroll}
                     onPageSelected={this._onPageSelected}
                 />
-                {this._renderIndicator()}
+	     {!this.props.indicatorOnTop &&
+	        this._renderIndicator()
+	     }
             </View>
         )
     }
