@@ -59,10 +59,8 @@ export default class IndicatorViewPager extends Component {
 
     render () {
         return (
-	    {this.props.indicatorOnTop &&
-	        this._renderIndicator()
-	    }
             <View style={[styles.container, this.props.style]} >
+	        {this._topIndicator()}
                 <ViewPager
                     {...this.props}
                     horizontalScroll={this.props.horizontalScroll}
@@ -71,15 +69,29 @@ export default class IndicatorViewPager extends Component {
                     onPageScroll={this._onPageScroll}
                     onPageSelected={this._onPageSelected}
                 />
-	     {!this.props.indicatorOnTop &&
-	        this._renderIndicator()
-	     }
+		{this._bottomIndicator()}
             </View>
         )
     }
 
     componentWillUnmount () {
         this._stopAutoPlay()
+    }
+
+    _topIndicator() {
+	if (this.props.indicatorOnTop) {
+		return this._renderIndicator()
+	} else {
+		return null
+	}
+    }
+    
+    _bottomIndicator() {
+	if (!this.props.indicatorOnTop) {
+		return this._renderIndicator()
+	} else {
+		return null
+	}
     }
 
     _onPageScroll (params) {
