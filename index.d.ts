@@ -18,6 +18,7 @@ declare module 'rn-viewpager' {
     }
 
     interface IndicatorViewPagerProps extends ViewProperties {
+      initialPage?: number;
       indicator: React.ReactNode;
       pagerStyle?: ViewProperties['style'];
       autoPlayEnable?: boolean;
