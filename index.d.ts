@@ -17,7 +17,7 @@ declare module 'rn-viewpager' {
       setPageWithoutAnimation(selectedPage: number): void;
     }
 
-    interface IndicatorViewPagerProps extends ViewProperties {
+    interface IndicatorViewPagerProps extends ViewProperties,ViewPagerProps {
       indicator: React.ReactNode;
       pagerStyle?: ViewProperties['style'];
       autoPlayEnable?: boolean;
