@@ -89,6 +89,7 @@ export default class ViewPager extends Component {
             onLayout: this._onScrollViewLayout,
             horizontal: true,
             pagingEnabled: this.props.horizontalScroll ? true : false,
+            scrollEnabled: this.props.horizontalScroll ? true : false,
             scrollsToTop: false,
             showsHorizontalScrollIndicator: false,
             showsVerticalScrollIndicator: false,

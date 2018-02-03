@@ -8,7 +8,7 @@
 | onPageScroll | function |  |  |
 | onPageScrollStateChanged | function |  |  |
 | onPageSelected | function |  |  |
-| scrollEnabled | bool | false |  |
+| horizontalScroll | bool | true |  |
 
 
 | Method | Params | Default | Note |
