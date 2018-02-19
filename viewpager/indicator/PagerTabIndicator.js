@@ -61,6 +61,7 @@ export default class PagerTabIndicator extends Component {
                     <Image
                         style={[styles.image, isSelected ? selectedIconStyle : iconStyle]}
                         source={isSelected ? tab.selectedIconSource : tab.iconSource}
+                        fadeDuration={0}
                     />
                     <Text
                         style={[isSelected ? styles.textSelected : styles.text, isSelected ? selectedTextStyle : textStyle]}
