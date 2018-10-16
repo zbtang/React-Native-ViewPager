@@ -87,8 +87,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingTop: 8,
         paddingBottom: 4,
-        borderTopWidth: 0.5,
-        borderTopColor: '#E0E0E0',
         backgroundColor: '#F7F7F7'
     },
     itemContainer: {
