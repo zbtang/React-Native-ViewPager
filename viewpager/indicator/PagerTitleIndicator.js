@@ -43,7 +43,7 @@ export default class PagerTitleIndicator extends Component {
 
     constructor(props) {
         super(props);
-        this._preSelectedIndex = props.initialPage;
+        this._preSelectedIndex = 0;
         this._contentHorOffset = 0;
         this._currentMaxHor = screenWidth;
         this._titleCount = props.titles.length || 0;
@@ -91,6 +91,10 @@ export default class PagerTitleIndicator extends Component {
                     key={index}
                     onLayout={e => {
                         itemLayoutInfo[index] = e.nativeEvent;
+
+                        if(index == (this.props.titles.length - 1)){
+                            this.onPageSelected({position: this.props.initialPage});
+                        }
                     }}
                     onPress={() => {
                         if(this.props.trackScroll === true){
