@@ -3,6 +3,7 @@
 
 | Prop | Type | Default | Note |
 | --- | --- | --- | --- |
+| style | ViewPropTypes.style | | |
 | tabs | PropTypes.arrayOf(PropTypes.shape({text: PropTypes.string,iconSource: Image.propTypes.source,selectedIconSource: Image.propTypes.source})) |  |  |
 | itemStyle | ViewPropTypes.style |  |  |
 | selectedItemStyle | ViewPropTypes.style |  |  |
