@@ -1,4 +1,4 @@
-declare module 'rn-viewpager' {
+declare module 'rn-advanced-viewpager' {
 
     import * as React from 'react';
     import { ImageURISource, ViewProperties, NativeScrollEvent, NativeSyntheticEvent, ViewPagerAndroidOnPageScrollEventData } from 'react-native';
@@ -17,7 +17,7 @@ declare module 'rn-viewpager' {
       setPageWithoutAnimation(selectedPage: number): void;
     }
 
-    interface IndicatorViewPagerProps extends ViewProperties {
+    interface IndicatorViewPagerProps extends ViewProperties,ViewPagerProps {
       indicator: React.ReactNode;
       pagerStyle?: ViewProperties['style'];
       autoPlayEnable?: boolean;
@@ -46,6 +46,7 @@ declare module 'rn-viewpager' {
       itemTextStyle?: ViewProperties['style'];
       selectedItemTextStyle?: ViewProperties['style'];
       selectedBorderStyle?: ViewProperties['style'];
+      selectedItemStyle?: ViewProperties['style'];
       renderTitle(index: number, title: string, isSelected: boolean): JSX.Element;
     }
     export class PagerTitleIndicator extends React.Component<PageTitleIndicatorProps> {}

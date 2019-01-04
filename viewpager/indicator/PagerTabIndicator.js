@@ -7,7 +7,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, View, ViewPropTypes, Image, Text, TouchableOpacity } from 'react-native'
 import IndicatorViewPager from '../IndicatorViewPager'
-
+import BadgeCounter from './BadgeCounter';
 export default class PagerTabIndicator extends Component {
     static propTypes = {
         ...ViewPropTypes,
@@ -36,7 +36,7 @@ export default class PagerTabIndicator extends Component {
         selectedIndex: this.props.initialPage
     }
 
-    render () {
+    render() {
         let {
             tabs, pager, style, itemStyle, selectedItemStyle, iconStyle,
             selectedIconStyle, textStyle, selectedTextStyle, changePageWithAnimation
@@ -45,28 +45,41 @@ export default class PagerTabIndicator extends Component {
 
         let tabsView = tabs.map((tab, index) => {
             let isSelected = this.state.selectedIndex === index
+            let counter = tab.counter && tab.counter > 0
+                ? <BadgeCounter counter={tab.counter} />
+                : null;
+
             return (
                 <TouchableOpacity
                     style={[styles.itemContainer, isSelected ? selectedItemStyle : itemStyle]}
                     activeOpacity={0.6}
                     key={index}
                     onPress={() => {
-                        if (!isSelected){
+                        if (index == 0) {
+                            tab.counter = 0;
+                        }
+                        if (!isSelected) {
                             if (this.props.changePageWithAnimation)
                                 pager.setPage(index);
                             else pager.setPageWithoutAnimation(index);
                         }
                     }}
                 >
+                <View style={{flexDirection: 'row',}}>
                     <Image
                         style={[styles.image, isSelected ? selectedIconStyle : iconStyle]}
                         source={isSelected ? tab.selectedIconSource : tab.iconSource}
                     />
+                     <View style={{top: 0,left: 12, position: 'absolute', justifyContent: 'center'}}>
+                    {counter}
+                    </View>
+                    </View>
                     <Text
                         style={[isSelected ? styles.textSelected : styles.text, isSelected ? selectedTextStyle : textStyle]}
                     >
                         {tab.text}
                     </Text>
+
                 </TouchableOpacity>
             )
         })
@@ -77,8 +90,8 @@ export default class PagerTabIndicator extends Component {
         )
     }
 
-    onPageSelected (e) {
-        this.setState({selectedIndex: e.position})
+    onPageSelected(e) {
+        this.setState({ selectedIndex: e.position })
     }
 }
 
@@ -93,7 +106,8 @@ const styles = StyleSheet.create({
     },
     itemContainer: {
         alignItems: 'center',
-        flex: 1
+        flex: 1,
+        position: 'relative'
     },
     image: {},
     text: {
