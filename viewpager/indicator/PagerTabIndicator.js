@@ -65,16 +65,20 @@ export default class PagerTabIndicator extends Component {
                         }
                     }}
                 >
+                <View style={{flexDirection: 'row',}}>
                     <Image
                         style={[styles.image, isSelected ? selectedIconStyle : iconStyle]}
                         source={isSelected ? tab.selectedIconSource : tab.iconSource}
                     />
+                     <View style={{top: 0,left: 12, position: 'absolute', justifyContent: 'center'}}>
+                    {counter}
+                    </View>
+                    </View>
                     <Text
                         style={[isSelected ? styles.textSelected : styles.text, isSelected ? selectedTextStyle : textStyle]}
                     >
                         {tab.text}
                     </Text>
-                    {counter}
 
                 </TouchableOpacity>
             )
@@ -102,7 +106,8 @@ const styles = StyleSheet.create({
     },
     itemContainer: {
         alignItems: 'center',
-        flex: 1
+        flex: 1,
+        position: 'relative'
     },
     image: {},
     text: {
