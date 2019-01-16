@@ -10,6 +10,8 @@ declare module 'rn-viewpager' {
       onPageScrollStateChanged?(state: 'idle' | 'settling' | 'dragging'): void;
       onPageSelected?(e: ViewPagerAndroidOnPageScrollEventData): void;
       scrollEnabled?: boolean;
+      horizontalScroll?: boolean;
+      bounces?: boolean;
     }
 
     export class ViewPager extends React.Component<ViewPagerProps> {
