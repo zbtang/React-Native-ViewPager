@@ -9,7 +9,7 @@
 | onPageScrollStateChanged | function |  |  |
 | onPageSelected | function |  |  |
 | horizontalScroll | bool | true |  |
-| scrollEnabled | bool | true | To disable/enable scroll(Horizontal/Vertical)
+| scrollEnabled | bool | true | To disable/enable scroll
 
 
 | Method | Params | Default | Note |
