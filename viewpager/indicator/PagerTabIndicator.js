@@ -39,9 +39,16 @@ export default class PagerTabIndicator extends Component {
     render () {
         let {
             tabs, pager, style, itemStyle, selectedItemStyle, iconStyle,
-            selectedIconStyle, textStyle, selectedTextStyle, changePageWithAnimation
+            selectedIconStyle, textStyle, selectedTextStyle, changePageWithAnimation,
+            children
         } = this.props
-        if (!tabs || tabs.length === 0) return null
+
+        if (!tabs || tabs.length === 0) {
+            if (children) {
+                return children && children(this.props)
+            }
+            return null
+        }
 
         let tabsView = tabs.map((tab, index) => {
             let isSelected = this.state.selectedIndex === index
