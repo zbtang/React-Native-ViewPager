@@ -65,10 +65,9 @@ export default class PagerDotIndicator extends Component {
 }
 const styles = StyleSheet.create({
     container: {
+        alignSelf: 'center',
         position: 'absolute',
         bottom: 10,
-        left: 0,
-        right: 0,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
