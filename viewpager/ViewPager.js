@@ -4,7 +4,8 @@
 
 'use strict'
 
-import { PanResponder, Platform, ScrollView, StyleSheet, View, ViewPagerAndroid } from 'react-native'
+import { PanResponder, Platform, ScrollView, View } from 'react-native'
+import RNCViewPager from '@react-native-community/viewpager';
 import React, { Component } from 'react'
 
 const SCROLLVIEW_REF = 'scrollView'
@@ -16,7 +17,7 @@ const SCROLL_STATE = {
     dragging: 'dragging'
 }
 export default class ViewPager extends Component {
-    static propTypes = {...ViewPagerAndroid.propTypes}
+    static propTypes = {...RNCViewPager.propTypes}
 
     static defaultProps = {
         initialPage: 0,
@@ -59,7 +60,7 @@ export default class ViewPager extends Component {
 
     render () {
         return (this.props.forceScrollView || Platform.OS === 'ios') ? this._renderOnIOS() : (
-            <ViewPagerAndroid
+            <RNCViewPager
                 {...this.props}
                 scrollEnabled={this.props.horizontalScroll ? true : false}
                 ref={VIEWPAGER_REF}
