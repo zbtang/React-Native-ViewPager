@@ -23,6 +23,7 @@ declare module 'rn-viewpager' {
       autoPlayEnable?: boolean;
       autoPlayInterval?: boolean;
       horizontalScroll?: boolean;
+      scrollEnabled?: boolean;
 
     }
     export class IndicatorViewPager extends React.Component<IndicatorViewPagerProps> {
