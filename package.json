@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/zbtang/React-Native-ViewPager.git"
   },
+  "dependencies": {
+    "@react-native-community/viewpager": "^1.1.7"
+  },
   "keywords": [
     "react-native-component",
     "react-component",
