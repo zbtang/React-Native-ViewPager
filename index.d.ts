@@ -6,7 +6,7 @@ declare module "rn-viewpager" {
     NativeScrollEvent,
     NativeSyntheticEvent
   } from "react-native";
-  import { ViewPagerAndroidOnPageScrollEventData } from "react-native-viewpager";
+  import { ViewPagerAndroidOnPageScrollEventData } from "@react-native-community/viewpager";
 
   interface ViewPagerProps extends ViewProperties {
     initialPage?: number;
