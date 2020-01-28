@@ -34,6 +34,7 @@ export default class IndicatorViewPager extends Component {
         this._onPageScroll = this._onPageScroll.bind(this)
         this._onPageSelected = this._onPageSelected.bind(this)
         this._goToNextPage = this._goToNextPage.bind(this)
+        this._goToPrevPage = this._goToPrevPage.bind(this)
         this._renderIndicator = this._renderIndicator.bind(this)
         this.setPage = this.setPage.bind(this)
         this.setPageWithoutAnimation = this.setPageWithoutAnimation.bind(this)
@@ -102,6 +103,11 @@ export default class IndicatorViewPager extends Component {
         let nextIndex = (this._currentIndex + 1) % this._childrenCount
         this.setPage(nextIndex)
     }
+
+    _goToPrevPage() {
+        let nextIndex = (this._currentIndex - 1) % this._childrenCount
+        this.setPage(nextIndex < 0 ? this._childrenCount - 1 : nextIndex)
+      }
 
     _startAutoPlay () {
         if (this._timerId) clearInterval(this._timerId)
