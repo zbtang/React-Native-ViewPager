@@ -137,3 +137,7 @@ export default class ViewPagerPage extends Component {
 ## Note
 
 When use this lib in ListView header on android platform, please add `removeClippedSubviews={false}` prop to your ListView.
+
+
+## Credits
+I forked this repository from https://github.com/zbtang/React-Native-ViewPager Which is non maintained from while and does not work with recent versions. 

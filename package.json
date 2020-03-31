@@ -1,6 +1,6 @@
 {
   "name": "@shankarmorwal/rn-viewpager",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "ViewPager component for react-native, same api on both android and ios.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zbtang/React-Native-ViewPager.git"
+    "url": "git+https://github.com/habilelabs/React-Native-ViewPager"
   },
   "keywords": [
     "react-native-component",
@@ -27,12 +27,12 @@
     "tab-bar",
     "tab-view"
   ],
-  "author": "ZubinTang",
+  "author": "Shankar Morwal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zbtang/React-Native-ViewPager/issues"
+    "url": "https://github.com/habilelabs/React-Native-ViewPager/issues"
   },
-  "homepage": "https://github.com/zbtang/React-Native-ViewPager#readme",
+  "homepage": "https://github.com/habilelabs/React-Native-ViewPager#readme",
   "dependencies": {
     "@react-native-community/viewpager": "^3.3.0"
   }
