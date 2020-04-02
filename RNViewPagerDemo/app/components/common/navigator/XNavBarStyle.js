@@ -7,7 +7,7 @@
 import React from 'react'
 import { StyleSheet, View, Dimensions, Platform } from 'react-native'
 
-let buildStyleInterpolator = require('buildStyleInterpolator')
+let buildStyleInterpolator = require('react-native/Libraries/Utilities/buildStyleInterpolator');
 let merge = require('merge')
 
 const SCREEN_WIDTH = Dimensions.get('window').width

@@ -4,9 +4,9 @@
 
 'use strict'
 
-import { StyleSheet, Platform, ViewPropTypes, Text, Image, BackAndroid } from 'react-native'
+import { StyleSheet, Platform, ViewPropTypes, Text, Image, BackHandler } from 'react-native'
 import { Navigator } from 'react-native-deprecated-custom-components'
-import { PropTypes } from 'react'
+import PropTypes from 'prop-types';
 import React from 'react'
 import XNavBarStyle from './XNavBarStyle'
 import XNavigatorStyles from './XNavigatorStyles'
@@ -125,15 +125,15 @@ export default class XNavigator extends React.Component {
         })
     }
 
-    componentWillMount () {
+    UNSAFE_componentWillMount () {
         if (Platform.OS === 'android') {
-            BackAndroid.addEventListener('hardwareBackPress', this._routeRenderer.onBackPress)
+            BackHandler.addEventListener('hardwareBackPress', this._routeRenderer.onBackPress)
         }
     }
 
     componentWillUnmount () {
         if (Platform.OS === 'android') {
-            BackAndroid.removeEventListener('hardwareBackPress', this._routeRenderer.onBackPress)
+            BackHandler.removeEventListener('hardwareBackPress', this._routeRenderer.onBackPress)
         }
     }
 }
