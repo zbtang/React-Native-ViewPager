@@ -1,5 +1,5 @@
 # React-Native-ViewPager
-[![npm](https://img.shields.io/npm/v/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/rn-viewpager) [![npm](https://img.shields.io/npm/dm/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/rn-viewpager) [![npm](https://img.shields.io/npm/dt/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/rn-viewpager)
+[![npm](https://img.shields.io/npm/v/@shankarmorwal/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/@shankarmorwal/rn-viewpager) [![npm](https://img.shields.io/npm/dm/@shankarmorwal/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/@shankarmorwal/rn-viewpager) [![npm](https://img.shields.io/npm/dt/@shankarmorwal/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/@shankarmorwal/rn-viewpager)
 
 ViewPager and Indicator component for react-native on both android and ios. ViewPager's props is the same as [ViewPagerAndroid](https://facebook.github.io/react-native/docs/viewpagerandroid.html#content). 
 

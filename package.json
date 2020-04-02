@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/habilelabs/React-Native-ViewPager#readme",
   "dependencies": {
-    "@react-native-community/viewpager": "^3.3.0"
+    "@react-native-community/viewpager": "^3.3.0",
+    "prop-types": "^15.7.2"
   }
 }

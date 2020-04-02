@@ -3,20 +3,21 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"android": "react-native run-android",
+		"ios": "react-native run-ios",
 		"test": "jest"
 	},
 	"dependencies": {
 		"@babel/core": "^7.9.0",
 		"@babel/plugin-proposal-decorators": "^7.8.3",
+		"@shankarmorwal/rn-viewpager": "file:../shankarmorwal-rn-viewpager-1.2.12.tgz",
 		"jsc-android": "^241213.1.0",
 		"merge": "^1.2.1",
 		"prop-types": "^15.7.2",
 		"react": "^16.11.0",
 		"react-native": "^0.62.0",
 		"react-native-deprecated-custom-components": "^0.1.2",
-		"react-native-navigator-animation": "^1.2.0",
-		"rn-viewpager": "^1.2.9"
+		"react-native-navigator-animation": "^1.2.0"
 	},
 	"devDependencies": {
 		"@babel/preset-flow": "^7.9.0",

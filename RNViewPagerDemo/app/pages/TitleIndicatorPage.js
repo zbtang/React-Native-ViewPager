@@ -6,7 +6,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, Platform, Image, TouchableOpacity, Animated,Dimensions } from 'react-native'
 import { SquarePagerView, TrianglePagerView, CirclePagerView } from '../components/PagerItemView'
-import { IndicatorViewPager,PagerTitleIndicator } from 'rn-viewpager'
+import { IndicatorViewPager,PagerTitleIndicator } from '@shankarmorwal/rn-viewpager'
 
 const windowWidth = Dimensions.get('window').width;
 export default class TitleIndicatorPage extends Component {

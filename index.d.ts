@@ -1,4 +1,4 @@
-declare module 'rn-viewpager' {
+declare module '@shankarmorwal/rn-viewpager' {
 
     import * as React from 'react';
     import { ImageURISource, ViewProperties, NativeScrollEvent, NativeSyntheticEvent, ViewPagerAndroidOnPageScrollEventData } from 'react-native';

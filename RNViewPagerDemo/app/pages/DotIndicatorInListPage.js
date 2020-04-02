@@ -5,7 +5,7 @@
 'use strict'
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, Image, ListView } from 'react-native'
-import { IndicatorViewPager, PagerDotIndicator } from 'rn-viewpager'
+import { IndicatorViewPager, PagerDotIndicator } from '@shankarmorwal/rn-viewpager'
 
 export default class DotIndicatorInListPage extends Component {
     constructor (props) {
