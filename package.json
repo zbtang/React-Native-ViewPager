@@ -1,6 +1,6 @@
 {
   "name": "rn-viewpager-handy",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "ViewPager component for react-native, same api on both android and ios.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zbtang/React-Native-ViewPager.git"
+    "url": "git+https://github.com/handipriyono/React-Native-ViewPager.git"
   },
   "keywords": [
     "react-native-component",
@@ -27,13 +27,17 @@
     "tab-bar",
     "tab-view"
   ],
-  "author": "ZubinTang",
+  "author": "Handi Priyono",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zbtang/React-Native-ViewPager/issues"
+    "url": "https://github.com/handipriyono/React-Native-ViewPager/issues"
   },
-  "homepage": "https://github.com/zbtang/React-Native-ViewPager#readme",
+  "homepage": "https://github.com/handipriyono/React-Native-ViewPager#readme",
   "dependencies": {
     "@react-native-community/viewpager": "^3.3.0"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {}
 }
