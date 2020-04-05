@@ -1,6 +1,6 @@
 {
   "name": "rn-viewpager-handy",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "ViewPager component for react-native, same api on both android and ios.",
   "main": "index.js",
   "scripts": {
@@ -39,5 +39,7 @@
   "directories": {
     "doc": "docs"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "react-native": "^0.59.1"
+  }
 }
