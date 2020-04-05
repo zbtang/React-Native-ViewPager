@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/zbtang/React-Native-ViewPager/issues"
   },
-  "homepage": "https://github.com/zbtang/React-Native-ViewPager#readme"
+  "homepage": "https://github.com/zbtang/React-Native-ViewPager#readme",
+  "dependencies": {
+    "@react-native-community/viewpager": "^3.3.0"
+  }
 }
