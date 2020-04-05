@@ -9,8 +9,7 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
-  View,
-  ViewPager
+  View
 } from "react-native";
 import React, { Component } from "react";
 import ViewPager from "@react-native-community/viewpager";
