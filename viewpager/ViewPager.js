@@ -12,7 +12,7 @@ import {
   View
 } from "react-native";
 import React, { Component } from "react";
-import ViewPager from "@react-native-community/viewpager";
+import ViewPagerAndroid from "@react-native-community/viewpager";
 
 const SCROLLVIEW_REF = "scrollView";
 const VIEWPAGER_REF = "viewPager";
@@ -23,7 +23,7 @@ const SCROLL_STATE = {
   dragging: "dragging"
 };
 export default class ViewPager extends Component {
-  static propTypes = { ...ViewPager.propTypes };
+  static propTypes = { ...ViewPagerAndroid.propTypes };
 
   static defaultProps = {
     initialPage: 0,
@@ -69,7 +69,7 @@ export default class ViewPager extends Component {
     return this.props.forceScrollView || Platform.OS === "ios" ? (
       this._renderOnIOS()
     ) : (
-      <ViewPager
+      <ViewPagerAndroid
         {...this.props}
         scrollEnabled={this.props.horizontalScroll ? true : false}
         ref={VIEWPAGER_REF}
