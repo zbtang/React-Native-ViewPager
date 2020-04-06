@@ -10,6 +10,75 @@ ViewPager and Indicator component for react-native on both android and ios. View
     <img src="./imgs/ad.png" width="1024">
 </p>
 
+## Linking
+
+### >= 0.60
+
+Autolinking will just do the job.
+
+### < 0.60
+
+#### Mostly automatic
+
+`react-native link @react-native-community/viewpager`
+
+#### Manual linking
+
+<details>
+<summary>Manually link the library on iOS</summary>
+</br>
+
+Follow the [instructions in the React Native documentation](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking) to manually link the framework or link using [Cocoapods](https://cocoapods.org) by adding this to your `Podfile`:
+
+```ruby
+pod 'react-native-viewpager', :path => '../node_modules/@react-native-community/viewpager'
+```
+
+</details>
+
+<details>
+<summary>Manually link the library on Android</summary>
+</br>
+Make the following changes:
+
+#### `android/settings.gradle`
+
+```groovy
+include ':@react-native-community_viewpager'
+project(':@react-native-community_viewpager').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/viewpager/android')
+```
+
+#### `android/app/build.gradle`
+
+```groovy
+dependencies {
+   ...
+   implementation project(':@react-native-community_viewpager')
+}
+```
+
+#### `android/app/src/main/.../MainApplication.java`
+
+On top, where imports are:
+
+```java
+import com.reactnativecommunity.viewpager.RNCViewPagerPackage;
+```
+
+Add the `RNCViewPagerPackage` class to your list of exported packages.
+
+```java
+@Override
+protected List<ReactPackage> getPackages() {
+  return Arrays.<ReactPackage>asList(
+    new MainReactPackage(),
+    new RNCViewPagerPackage()
+  );
+}
+```
+
+</details>
+
 ## Features
 
 - unify \<ViewPagerAndroid\> and \<ScrollView pagingEnabled={true}\> to \<ViewPager\>, add offer same props as [ViewPagerAndroid](https://facebook.github.io/react-native/docs/viewpagerandroid.html#content).
@@ -17,8 +86,6 @@ ViewPager and Indicator component for react-native on both android and ios. View
 - implement common indicator: DotIndicator, TitleIndicator and TabIndicator
 
 ## Preview
-
-[download demo apk file](http://fir.im/md2u)
 
 <p>
     <img src="./imgs/dotIndicator.gif" width="256" />
