@@ -1,14 +1,15 @@
 {
-  "name": "rn-viewpager",
-  "version": "1.2.9",
+  "name": "rn-viewpager-handy",
+  "version": "1.5.0",
   "description": "ViewPager component for react-native, same api on both android and ios.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1;"
+    "start": "react-native start",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zbtang/React-Native-ViewPager.git"
+    "url": "git+https://github.com/handipriyono/React-Native-ViewPager.git"
   },
   "keywords": [
     "react-native-component",
@@ -25,12 +26,33 @@
     "tab",
     "navigator",
     "tab-bar",
-    "tab-view"
+    "tab-view",
+    "rn-viewpager",
+    "rn-viewpager-handy"
   ],
-  "author": "ZubinTang",
+  "author": "Handi Priyono",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zbtang/React-Native-ViewPager/issues"
+    "url": "https://github.com/handipriyono/React-Native-ViewPager/issues"
   },
-  "homepage": "https://github.com/zbtang/React-Native-ViewPager#readme"
+  "homepage": "https://github.com/handipriyono/React-Native-ViewPager#readme",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "@react-native-community/viewpager": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "babel-jest": "^25.2.6",
+    "jest": "^25.2.7",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-test-renderer": "16.8.3",
+    "react": "^16.0",
+    "react-native": "^0.59.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
