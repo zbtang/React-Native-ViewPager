@@ -1,4 +1,4 @@
-# React-Native-ViewPager
+# React-Native-ViewPager-Handy - Updated Version
 
 [![npm](https://img.shields.io/npm/v/rn-viewpager-handy.svg?style=plastic)](https://npmjs.org/package/rn-viewpager-handy) [![npm](https://img.shields.io/npm/dm/rn-viewpager.svg?style=plastic)](https://npmjs.org/package/rn-viewpager-handy) [![npm](https://img.shields.io/npm/dt/rn-viewpager-handy.svg?style=plastic)](https://npmjs.org/package/rn-viewpager-handy)
 
@@ -10,7 +10,7 @@ ViewPager and Indicator component for react-native on both android and ios. View
     <img src="./imgs/ad.png" width="1024">
 </p>
 
-## Linking
+## Linking - React Native ViewPager Handy:
 
 ### >= 0.60
 
