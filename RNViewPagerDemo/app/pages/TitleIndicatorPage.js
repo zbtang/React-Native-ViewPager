@@ -3,55 +3,26 @@
  */
 
 'use strict'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, Text, Platform, Image, TouchableOpacity, Animated,Dimensions } from 'react-native'
 import { SquarePagerView, TrianglePagerView, CirclePagerView } from '../components/PagerItemView'
 import { IndicatorViewPager,PagerTitleIndicator } from '@shankarmorwal/rn-viewpager'
 
 const windowWidth = Dimensions.get('window').width;
-export default class TitleIndicatorPage extends Component {
-    state = {
-        bgColor: new Animated.Value(0)
+
+const TitleIndicatorPage = (props) => {
+    const [bgColor, setBgColor] = useState(new Animated.Value(0));
+    let _setBgColor = Animated.event([{bgColor: bgColor}],{useNativeDriver: false});
+    let _bgColor = bgColor.interpolate({
+        inputRange: [0, 1, 2 , 3 , 4, 5 , 6 , 7, 8],
+        outputRange: ['hsl(187, 74%, 47%)', 'hsl(89, 47%, 54%)', 'hsl(12, 97%, 59%)','hsl(32, 97%, 59%)','hsl(72, 97%, 59%)','hsl(212, 97%, 59%)','hsl(332, 97%, 59%)','hsl(1, 97%, 59%)','hsl(200, 97%, 59%)']
+    })
+    function _onPageScroll(scrollData) {
+        let {offset, position} = scrollData
+        if (position < 0 || position > 8) return
+        _setBgColor({bgColor: offset + position})
     }
-    _setBgColor = Animated.event([{bgColor: this.state.bgColor}])
-
-    render () {
-        let bgColor = this.state.bgColor.interpolate({
-            inputRange: [0, 1, 2 , 3 , 4, 5 , 6 , 7, 8],
-            outputRange: ['hsl(187, 74%, 47%)', 'hsl(89, 47%, 54%)', 'hsl(12, 97%, 59%)','hsl(32, 97%, 59%)','hsl(72, 97%, 59%)','hsl(212, 97%, 59%)','hsl(332, 97%, 59%)','hsl(1, 97%, 59%)','hsl(200, 97%, 59%)']
-        })
-        return (
-            <Animated.View style={{flex: 1, backgroundColor: bgColor}} >
-                <View >
-                    {Platform.OS === 'ios' && <View style={styles.statusBar} />}
-                    <View style={styles.toolbarContainer} >
-                        <TouchableOpacity onPress={() => this.props.navigator.pop()} >
-                            <Image style={styles.backImg} source={require('../imgs/back_arrow.png')} />
-                        </TouchableOpacity>
-                        <Text style={styles.titleTxt} >TITLE</Text>
-                    </View>
-                </View>
-                <IndicatorViewPager
-                    style={{flex: 1, flexDirection: 'column-reverse'}}
-                    indicator={this._renderTitleIndicator()}
-                    onPageScroll={this._onPageScroll.bind(this)}
-                >
-                    {SquarePagerView()}
-                    {CirclePagerView()}
-                    {TrianglePagerView()}
-                    {SquarePagerView()}
-                    {CirclePagerView()}
-                    {TrianglePagerView()}
-                    {SquarePagerView()}
-                    {CirclePagerView()}
-                    {TrianglePagerView()}
-
-                </IndicatorViewPager>
-            </Animated.View>
-        )
-    }
-
-    _renderTitleIndicator () {
+    function _renderTitleIndicator(){
         return (
             <PagerTitleIndicator
                 style={styles.indicatorContainer}
@@ -65,14 +36,38 @@ export default class TitleIndicatorPage extends Component {
             />
         )
     }
+    return (
+        <Animated.View style={{flex: 1, backgroundColor: _bgColor}} >
+                <View >
+                    {Platform.OS === 'ios' && <View style={styles.statusBar} />}
+                    <View style={styles.toolbarContainer} >
+                        <TouchableOpacity onPress={() => props.navigator.pop()} >
+                            <Image style={styles.backImg} source={require('../imgs/back_arrow.png')} />
+                        </TouchableOpacity>
+                        <Text style={styles.titleTxt} >TITLE</Text>
+                    </View>
+                </View>
+                <IndicatorViewPager
+                    style={{flex: 1, flexDirection: 'column-reverse'}}
+                    indicator={_renderTitleIndicator()}
+                    onPageScroll={_onPageScroll}
+                >
+                    {SquarePagerView()}
+                    {CirclePagerView()}
+                    {TrianglePagerView()}
+                    {SquarePagerView()}
+                    {CirclePagerView()}
+                    {TrianglePagerView()}
+                    {SquarePagerView()}
+                    {CirclePagerView()}
+                    {TrianglePagerView()}
 
-    _onPageScroll (scrollData) {
-        let {offset, position} = scrollData
-        if (position < 0 || position > 8) return
-        this._setBgColor({bgColor: offset + position})
-    }
-
+                </IndicatorViewPager>
+            </Animated.View>
+    )
 }
+
+export default TitleIndicatorPage
 
 const styles = StyleSheet.create({
     indicatorContainer: {

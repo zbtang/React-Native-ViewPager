@@ -1,29 +1,16 @@
 /**
  * Created by tangzhibin on 16/3/21.
  */
-
-'use strict'
-import React, { Component } from 'react'
+import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import { TabIndicatorPage, TitleIndicatorPage, DotIndicatorPage } from '../XRoutes'
 
-export default class HomePage extends Component {
-
-    render () {
-        return (
-            <View style={styles.container} >
-                {this.renderItem('D.O.T', 0xF1B136FF, styles.circle, DotIndicatorPage)}
-                {this.renderItem('T.I.T.L.E', 0x13B0A5FF, styles.square, TitleIndicatorPage)}
-                {this.renderItem('T.A.B', 0xEF6363FF, styles.triangle, TabIndicatorPage)}
-            </View>
-        )
-    }
-
-    renderItem (text, bgColor, shapeStyle, route) {
+const HomePage = (props) => {
+    function renderItem(text, bgColor, shapeStyle, route) {
         return (
             <TouchableOpacity
                 style={[styles.itemContainer, {backgroundColor: bgColor}]}
-                onPress={() => this.props.navigator.push(route())}
+                onPress={() => props.navigator.push(route())}
                 activeOpacity={0.6}
             >
                 <View style={[styles.shapeBase, shapeStyle]} />
@@ -31,7 +18,17 @@ export default class HomePage extends Component {
             </TouchableOpacity>
         )
     }
+    return (
+        <View style={styles.container} >
+            {renderItem('D.O.T', 0xF1B136FF, styles.circle, DotIndicatorPage)}
+            {renderItem('T.I.T.L.E', 0x13B0A5FF, styles.square, TitleIndicatorPage)}
+            {renderItem('T.A.B', 0xEF6363FF, styles.triangle, TabIndicatorPage)}
+        </View>
+    )
 }
+
+export default HomePage
+
 const styles = StyleSheet.create({
     container: {
         flex: 1

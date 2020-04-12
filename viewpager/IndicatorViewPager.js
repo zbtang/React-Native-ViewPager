@@ -61,7 +61,7 @@ export default class IndicatorViewPager extends Component {
                 <ViewPager
                     {...this.props}
                     horizontalScroll={this.props.horizontalScroll}
-                    ref={VIEWPAGER_REF}
+                    forwardRef={VIEWPAGER_REF}
                     style={[styles.pager, this.props.pagerStyle]}
                     onPageScroll={this._onPageScroll}
                     onPageSelected={this._onPageSelected}
@@ -92,7 +92,7 @@ export default class IndicatorViewPager extends Component {
         let {indicator, initialPage} = this.props
         if (!indicator)return null
         return React.cloneElement(indicator, {
-            ref: INDICATOR_REF,
+            forwardRef: INDICATOR_REF,
             pager: this,
             initialPage: initialPage
         })
