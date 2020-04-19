@@ -11,6 +11,7 @@ import { SquarePagerView, TrianglePagerView, CirclePagerView } from '../componen
 
 const TabIndicatorPage = () => {
     const [bgColor, setBgColor] = useState(new Animated.Value(0));
+    const [viewPager, setViewPager] = useState(null);
     let _setBgColor = Animated.event([{bgColor: bgColor}],{useNativeDriver: false});
     let _bgColor = bgColor.interpolate({
         inputRange: [0, 1, 2],
@@ -44,6 +45,9 @@ const TabIndicatorPage = () => {
         return (
             <PagerTabIndicator
                 style={styles.indicatorContainer}
+                ref={viewPagerRef => {
+                    setViewPager(viewPagerRef);
+                }}
                 iconStyle={styles.tabIcon}
                 selectedIconStyle={styles.selectedTabIcon}
                 textStyle={styles.tabTxt}

@@ -1014,9 +1014,9 @@
     color "^3.1.2"
     react-native-iphone-x-helper "^1.2.1"
 
-"@shankarmorwal/rn-viewpager@1.2.14":
-  version "1.2.14"
-  resolved "https://registry.yarnpkg.com/@shankarmorwal/rn-viewpager/-/rn-viewpager-1.2.14.tgz#540836fc800c8c7548117e4413e62a2930339ed1"
+"@shankarmorwal/rn-viewpager@1.2.15":
+  version "1.2.15"
+  resolved "https://registry.yarnpkg.com/@shankarmorwal/rn-viewpager/-/rn-viewpager-1.2.15.tgz#3746d65fefd010b0f258bae0cde4057a7c47d20c"
   dependencies:
     "@react-native-community/viewpager" "^3.3.0"
     prop-types "^15.7.2"

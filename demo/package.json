@@ -14,7 +14,7 @@
     "@react-native-community/viewpager": "^3.3.0",
     "@react-navigation/native": "^5.1.6",
     "@react-navigation/stack": "^5.2.11",
-    "@shankarmorwal/rn-viewpager": "1.2.14",
+    "@shankarmorwal/rn-viewpager": "1.2.15",
     "merge": "^1.2.1",
     "prop-types": "^15.7.2",
     "react": "16.11.0",

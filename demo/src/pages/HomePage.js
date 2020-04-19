@@ -2,15 +2,14 @@
  * Created by tangzhibin on 16/3/21.
  */
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
-import { TabIndicatorPage, TitleIndicatorPage, DotIndicatorPage } from '../XRoutes'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 const HomePage = ({navigation}) => {
     function renderItem(text, bgColor, shapeStyle, route) {
         return (
             <TouchableOpacity
                 style={[styles.itemContainer, {backgroundColor: bgColor}]}
-                onPress={() => navigation.navigate('TitleIndicatorPage')}
+                onPress={() => navigation.navigate(route)}
                 activeOpacity={0.6}
             >
                 <View style={[styles.shapeBase, shapeStyle]} />
@@ -20,9 +19,9 @@ const HomePage = ({navigation}) => {
     }
     return (
         <View style={styles.container} >
-            {renderItem('D.O.T', 0xF1B136FF, styles.circle, "DotIndicatorPage")}
-            {renderItem('T.I.T.L.E', 0x13B0A5FF, styles.square, "TitleIndicatorPage")}
-            {renderItem('T.A.B', 0xEF6363FF, styles.triangle, "TabIndicatorPage")}
+            {renderItem('D.O.T', 0xF1B136FF, styles.circle, "Dot Indicator")}
+            {renderItem('T.I.T.L.E', 0x13B0A5FF, styles.square, "Title Indicator")}
+            {renderItem('T.A.B', 0xEF6363FF, styles.triangle, "Tab Indicator")}
         </View>
     )
 }

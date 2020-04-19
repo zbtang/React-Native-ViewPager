@@ -19,10 +19,10 @@ const App: () => React$Node = () => {
             <SafeAreaView style={{flex: 1}}>
                 <NavigationContainer>
                     <Stack.Navigator>
-                        <Stack.Screen name="HomePage" component={HomePage} />
-                        <Stack.Screen name="TitleIndicatorPage" component={TitleIndicatorPage} />
-                        <Stack.Screen name="DotIndicatorPage" component={DotIndicatorPage} />
-                        <Stack.Screen name="TabIndicatorPage" component={TabIndicatorPage} />
+                        <Stack.Screen name="Home" component={HomePage} />
+                        <Stack.Screen name="Title Indicator" component={TitleIndicatorPage} />
+                        <Stack.Screen name="Dot Indicator" component={DotIndicatorPage} />
+                        <Stack.Screen name="Tab Indicator" component={TabIndicatorPage} />
                     </Stack.Navigator>
                 </NavigationContainer>
             </SafeAreaView>
