@@ -63,7 +63,7 @@ export default class ViewPager extends Component {
             <ViewPagerAndroid
                 {...this.props}
                 scrollEnabled={this.props.horizontalScroll ? true : false}
-                forwardRef={VIEWPAGER_REF}
+                ref={VIEWPAGER_REF}
                 key={this.props.children ? this.props.children.length : 0}
                 onPageScroll={this._onPageScrollOnAndroid}
                 onPageSelected={this._onPageSelectedOnAndroid}
@@ -86,7 +86,7 @@ export default class ViewPager extends Component {
         let needMonitorTouch = !!this.props.onPageScrollStateChanged
         let props = {
             ...this.props,
-            forwardRef: SCROLLVIEW_REF,
+            ref: SCROLLVIEW_REF,
             onLayout: this._onScrollViewLayout,
             horizontal: true,
             pagingEnabled: this.props.horizontalScroll ? true : false,

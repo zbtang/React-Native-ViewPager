@@ -10,8 +10,21 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/masked-view": "^0.1.9",
+    "@react-native-community/viewpager": "^3.3.0",
+    "@react-navigation/native": "^5.1.6",
+    "@react-navigation/stack": "^5.2.11",
+    "@shankarmorwal/rn-viewpager": "1.2.14",
+    "merge": "^1.2.1",
+    "prop-types": "^15.7.2",
     "react": "16.11.0",
-    "react-native": "0.62.2"
+    "react-native": "0.62.2",
+    "react-native-deprecated-custom-components": "^0.1.2",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-navigator-animation": "^1.2.0",
+    "react-native-reanimated": "^1.8.0",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

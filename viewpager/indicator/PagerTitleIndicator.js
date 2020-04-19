@@ -74,8 +74,8 @@ export default class PagerTitleIndicator extends Component {
             if (!itemStyle && !selectedItemStyle) {
                 itemMarginObj =
                     index < this._titleCount - 1
-                    ? { marginLeft: itemMargin }
-                    : { marginLeft: itemMargin, marginRight: itemMargin };
+                        ? { marginLeft: itemMargin }
+                        : { marginLeft: itemMargin, marginRight: itemMargin };
             }
 
             const titleView = this.props.renderTitle ? this.props.renderTitle(index, title, isSelected) : (
@@ -106,19 +106,19 @@ export default class PagerTitleIndicator extends Component {
         })
         return (
             <View style={[styles.indicatorContainer, this.props.style]} >
-                 <ScrollView
+                <ScrollView
                     scrollEventThrottle={1}
                     onScroll={e => {
                         this._contentHorOffset = e.nativeEvent.contentOffset.x;
                         this._currentMaxHor = screenWidth + this._contentHorOffset;
                     }}
                     showsHorizontalScrollIndicator={false}
-                    forwardRef={c => {
+                    ref={c => {
                         this.scroller = c;
                     }}
                     horizontal={true}
                     style={{ flex: 1 }}
-                    >
+                >
                     {titleViews}
                 </ScrollView>
             </View>
