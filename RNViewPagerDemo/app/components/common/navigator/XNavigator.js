@@ -50,7 +50,7 @@ export default class XNavigator extends React.Component {
         return (
             <Navigator
                 {...this.props}
-                ref={this._setNavigatorRef}
+                forwardRef={this._setNavigatorRef}
                 style={[XNavigatorStyles.navigator, this.props.style]}
                 sceneStyle={StyleSheet.flatten([XNavigatorStyles.scene, {paddingTop: sencePaddingTop}, this.props.sceneStyle])}
                 navigationBar={this._renderNavigationBar()}
@@ -76,7 +76,7 @@ export default class XNavigator extends React.Component {
         let firstRoute = navigator.getCurrentRoutes()[0]
         if (route === firstRoute)
             scene = React.cloneElement(scene, {
-                ref: component => {
+                forwardRef: component => {
                     this._firstScene = component
                     route.scene = component
                 }

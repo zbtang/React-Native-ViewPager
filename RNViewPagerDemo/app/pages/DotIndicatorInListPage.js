@@ -2,35 +2,19 @@
  * Created by tangzhibin on 16/7/19.
  */
 
-'use strict'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, Image, ListView } from 'react-native'
 import { IndicatorViewPager, PagerDotIndicator } from '@shankarmorwal/rn-viewpager'
-
-export default class DotIndicatorInListPage extends Component {
-    constructor (props) {
-        super(props)
-        this._renderHeader = this._renderHeader.bind(this)
-        var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
-        this.state = {dataSource: ds.cloneWithRows(['row 1', 'row 2', 'row 2', 'row 3', 'row 4'])}
-    }
-
-    render () {
-        return (
-            <ListView
-                style={{flex: 1}}
-                dataSource={this.state.dataSource}
-                renderRow={(rowData) => <Text>{rowData}</Text>}
-                renderHeader={this._renderHeader}
-            />
-        )
-    }
-
-    _renderHeader () {
+ 
+ const DotIndicatorInListPage = () => {
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+    const [dataSource, setDataSource] = useState(ds.cloneWithRows(['row 1', 'row 2', 'row 2', 'row 3', 'row 4']));
+    
+    function _renderHeader() {
         return (
             <IndicatorViewPager
                 style={{height: 200}}
-                indicator={this._renderIndicator()}
+                indicator={_renderIndicator()}
                 autoPlayEnable
                 onPageSelected={(p) => console.log(p)}
             >
@@ -40,8 +24,8 @@ export default class DotIndicatorInListPage extends Component {
             </IndicatorViewPager>
         )
     }
-
-    _renderIndicator () {
+    
+    function _renderIndicator() {
         return (
             <PagerDotIndicator
                 pageCount={3}
@@ -50,9 +34,17 @@ export default class DotIndicatorInListPage extends Component {
             />
         )
     }
-
-}
-
+    
+    return (
+        <ListView
+        style={{flex: 1}}
+        dataSource={dataSource}
+        renderRow={(rowData) => <Text>{rowData}</Text>}
+        renderHeader={_renderHeader}
+        />
+     )
+ }
+ export default DotIndicatorInListPage;
 const styles = StyleSheet.create({
     bannerImg: {
         flex: 1,

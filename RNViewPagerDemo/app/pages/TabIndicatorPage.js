@@ -4,48 +4,26 @@
 
 'use strict'
 
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, Text, Animated } from 'react-native'
 import { IndicatorViewPager, PagerTabIndicator } from '@shankarmorwal/rn-viewpager'
 import { SquarePagerView, TrianglePagerView, CirclePagerView } from '../components/PagerItemView'
 
-export default class TabIndicatorPage extends Component {
-    state = {
-        bgColor: new Animated.Value(0)
-    }
-
-    _setBgColor = Animated.event([{bgColor: this.state.bgColor}])
-
-    _bgColor = this.state.bgColor.interpolate({
+const TabIndicatorPage = () => {
+    const [bgColor, setBgColor] = useState(new Animated.Value(0));
+    let _setBgColor = Animated.event([{bgColor: bgColor}],{useNativeDriver: false});
+    let _bgColor = bgColor.interpolate({
         inputRange: [0, 1, 2],
         outputRange: ['hsl(187, 74%, 47%)', 'hsl(89, 47%, 54%)', 'hsl(12, 97%, 59%)']
     })
-
-    render () {
-        return (
-            <Animated.View style={{flex: 1, backgroundColor: this._bgColor}} >
-                <IndicatorViewPager
-                    style={{flex: 1}}
-                    indicator={this._renderTabIndicator()}
-                    onPageScroll={this._onPageScroll.bind(this)}
-                    scrollEnabled={false}
-                    initialPage={1}
-                >
-                    {SquarePagerView()}
-                    {CirclePagerView()}
-                    {TrianglePagerView()}
-                </IndicatorViewPager>
-            </Animated.View>
-        )
-    }
-
-    _onPageScroll (scrollData) {
+    
+    function _onPageScroll(scrollData) {
         let {offset, position} = scrollData
         if (position < 0 || position >= 2) return
-        this._setBgColor({bgColor: offset + position})
+        _setBgColor({bgColor: offset + position})
     }
 
-    _renderTabIndicator () {
+    function _renderTabIndicator() {
         let tabs = [
             {
                 text: 'SQUARE',
@@ -77,7 +55,24 @@ export default class TabIndicatorPage extends Component {
         )
     }
 
+    return (
+        <Animated.View style={{flex: 1, backgroundColor: _bgColor}} >
+            <IndicatorViewPager
+                style={{flex: 1}}
+                indicator={_renderTabIndicator()}
+                onPageScroll={_onPageScroll}
+                scrollEnabled={false}
+                initialPage={1}
+            >
+                {SquarePagerView()}
+                {CirclePagerView()}
+                {TrianglePagerView()}
+            </IndicatorViewPager>
+        </Animated.View>
+    )
 }
+
+export default TabIndicatorPage;
 
 const styles = StyleSheet.create({
     indicatorContainer: {

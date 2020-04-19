@@ -140,7 +140,7 @@ export default class ExRouteRenderer {
                 return scene
             }
             return React.cloneElement(scene, {
-                ref: component => route.scene = component,
+                forwardRef: component => route.scene = component,
                 navigator: navigator
             })
         }
@@ -151,7 +151,7 @@ export default class ExRouteRenderer {
         let Component = route.getSceneClass()
         return (
             <Component
-                ref={component => route.scene = component}
+                forwardRef={component => route.scene = component}
                 navigator={navigator}
             />
         )

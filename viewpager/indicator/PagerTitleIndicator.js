@@ -113,7 +113,7 @@ export default class PagerTitleIndicator extends Component {
                         this._currentMaxHor = screenWidth + this._contentHorOffset;
                     }}
                     showsHorizontalScrollIndicator={false}
-                    ref={c => {
+                    forwardRef={c => {
                         this.scroller = c;
                     }}
                     horizontal={true}
