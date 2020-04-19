@@ -45,10 +45,3 @@ import { IndicatorViewPager, PagerDotIndicator } from '@shankarmorwal/rn-viewpag
      )
  }
  export default DotIndicatorInListPage;
-const styles = StyleSheet.create({
-    bannerImg: {
-        flex: 1,
-        height: 100,
-        width: 300
-    }
-})

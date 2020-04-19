@@ -24,9 +24,9 @@ ViewPager and Indicator component for react-native on both android and ios. View
 ## Build and run the demo
 
 ```  
-cd RNViewPagerDemo/
+cd demo/
 npm install
-react-native run-ios
+yarn ios
 ```
 
 ## Component API

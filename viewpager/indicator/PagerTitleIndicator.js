@@ -47,6 +47,7 @@ export default class PagerTitleIndicator extends Component {
         this._contentHorOffset = 0;
         this._currentMaxHor = screenWidth;
         this._titleCount = props.titles.length || 0;
+        this.scrollerRef = React.createRef();
     }
 
     shouldComponentUpdate (nextProps, nextState) {
@@ -113,9 +114,7 @@ export default class PagerTitleIndicator extends Component {
                         this._currentMaxHor = screenWidth + this._contentHorOffset;
                     }}
                     showsHorizontalScrollIndicator={false}
-                    ref={c => {
-                        this.scroller = c;
-                    }}
+                    ref={this.scrollerRef}
                     horizontal={true}
                     style={{ flex: 1 }}
                 >
@@ -154,10 +153,10 @@ export default class PagerTitleIndicator extends Component {
             }
             if (this._contentHorOffset > lastItemOffsetX) {
                 const deltaX = curItemOffsetX - DEFAULT_ITEM_MARGIN;
-                this.scroller.scrollTo({ x: deltaX });
+                this.scrollerRef.current.scrollTo({ x: deltaX });
             } else if (this._currentMaxHor < lastItemAbsPosition) {
                 const deltaX = lastItemAbsPosition - this._currentMaxHor;
-                this.scroller.scrollTo({ x: this._contentHorOffset + deltaX });
+                this.scrollerRef.current.scrollTo({ x: this._contentHorOffset + deltaX });
             }
         } else if (moveDir === BACKWARD) {
             //indicator move back
@@ -174,7 +173,7 @@ export default class PagerTitleIndicator extends Component {
             }
             if (this._contentHorOffset > lastItemOffsetX || this._currentMaxHor < curItemAbsPosition) {
                 const deltaX = lastItemOffsetX - DEFAULT_ITEM_MARGIN;
-                this.scroller.scrollTo({ x: deltaX });
+                this.scrollerRef.current.scrollTo({ x: deltaX });
             }
         }
     }

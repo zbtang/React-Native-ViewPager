@@ -38,15 +38,6 @@ const TitleIndicatorPage = (props) => {
     }
     return (
         <Animated.View style={{flex: 1, backgroundColor: _bgColor}} >
-                <View >
-                    {Platform.OS === 'ios' && <View style={styles.statusBar} />}
-                    <View style={styles.toolbarContainer} >
-                        <TouchableOpacity onPress={() => props.navigator.pop()} >
-                            <Image style={styles.backImg} source={require('../imgs/back_arrow.png')} />
-                        </TouchableOpacity>
-                        <Text style={styles.titleTxt} >TITLE</Text>
-                    </View>
-                </View>
                 <IndicatorViewPager
                     style={{flex: 1, flexDirection: 'column-reverse'}}
                     indicator={_renderTitleIndicator()}

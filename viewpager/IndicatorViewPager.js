@@ -9,8 +9,6 @@ import PropTypes from 'prop-types'
 import { StyleSheet, View, ViewPropTypes } from 'react-native'
 import ViewPager from './ViewPager'
 
-const VIEWPAGER_REF = 'viewPager'
-const INDICATOR_REF = 'indicator'
 export default class IndicatorViewPager extends Component {
     static propTypes = {
         ...ViewPager.propTypes,
@@ -41,6 +39,8 @@ export default class IndicatorViewPager extends Component {
         this._stopAutoPlay = this._stopAutoPlay.bind(this)
         this._currentIndex = props.initialPage
         this._childrenCount = React.Children.count(props.children)
+        this.indicatorRef = React.createRef()
+        this.viewPagerRef = React.createRef()
     }
 
     UNSAFE_componentWillMount () {
@@ -61,7 +61,7 @@ export default class IndicatorViewPager extends Component {
                 <ViewPager
                     {...this.props}
                     horizontalScroll={this.props.horizontalScroll}
-                    ref={VIEWPAGER_REF}
+                    ref={this.viewPagerRef}
                     style={[styles.pager, this.props.pagerStyle]}
                     onPageScroll={this._onPageScroll}
                     onPageSelected={this._onPageSelected}
@@ -76,13 +76,13 @@ export default class IndicatorViewPager extends Component {
     }
 
     _onPageScroll (params) {
-        let indicator = this.refs[INDICATOR_REF]
+        let indicator = this.viewPagerRef.current;
         indicator && indicator.onPageScroll && indicator.onPageScroll(params)
         this.props.onPageScroll && this.props.onPageScroll(params)
     }
 
     _onPageSelected (params) {
-        let indicator = this.refs[INDICATOR_REF]
+        let indicator = this.indicatorRef.current;
         indicator && indicator.onPageSelected && indicator.onPageSelected(params)
         this.props.onPageSelected && this.props.onPageSelected(params)
         this._currentIndex = params.position
@@ -92,7 +92,7 @@ export default class IndicatorViewPager extends Component {
         let {indicator, initialPage} = this.props
         if (!indicator)return null
         return React.cloneElement(indicator, {
-            ref: INDICATOR_REF,
+            ref: this.indicatorRef,
             pager: this,
             initialPage: initialPage
         })
@@ -116,11 +116,11 @@ export default class IndicatorViewPager extends Component {
     }
 
     setPage (selectedPage) {
-        this.refs[VIEWPAGER_REF].setPage(selectedPage)
+        this.viewPagerRef.current.setPage(selectedPage)
     }
 
     setPageWithoutAnimation (selectedPage) {
-        this.refs[VIEWPAGER_REF].setPageWithoutAnimation(selectedPage)
+        this.viewPagerRef.current.setPageWithoutAnimation(selectedPage)
     }
 }
 
