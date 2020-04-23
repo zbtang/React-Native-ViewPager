@@ -59,7 +59,7 @@ export default class PagerTitleIndicator extends Component {
             this.props.selectedItemTextStyle != nextProps.selectedItemTextStyle ||
             this.props.selectedBorderStyle != nextProps.selectedBorderStyle
     }
-    UNSAFE_componentWillReceiveProps(nextProps){
+    componentDidUpdate(nextProps){
         this._titleCount = nextProps.titles.length;
     }
 
